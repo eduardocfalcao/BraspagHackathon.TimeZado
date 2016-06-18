@@ -46,6 +46,7 @@
     <Compile Include="ApiClient\BlackboxApiClient.cs" />
     <Compile Include="ApiClient\CreditCardApiClient.cs" />
     <Compile Include="ApiClient\Requests\CreditCard.cs" />
+    <Compile Include="ApiClient\Response\CreditCardCreateResponse.cs" />
     <Compile Include="IMerchantAddressBookService.cs" />
     <Compile Include="IMerchantService.cs" />
     <Compile Include="MerchantAddressBookService.cs" />
@@ -69,9 +70,7 @@
       <Name>BraspagHackathon.TimeZado.Model</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ApiClient\Response\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

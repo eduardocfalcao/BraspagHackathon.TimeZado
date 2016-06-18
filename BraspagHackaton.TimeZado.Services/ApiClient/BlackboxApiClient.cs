@@ -25,5 +25,21 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
         public string ApiUrl { get { return _apiUrl; } }
 
 
+        public T Post<T>(string resourceUri, object postBody)
+        {
+            return default(T);
+        }
+
+        public void Put<T> (string resourceUri, object putBody)
+        {
+
+        }
+
+        public T Get<T>(string resourceUri)
+        {
+            return default(T);
+        }
+
+
     }
 }
