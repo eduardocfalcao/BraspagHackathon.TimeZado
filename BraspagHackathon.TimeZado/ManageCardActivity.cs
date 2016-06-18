@@ -20,6 +20,11 @@ namespace BraspagHackathon.TimeZado
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.ManageCard);
+
+            var listview = FindViewById<ListView>(Resource.Id.CardsList);
+
+            var adapter = new ArrayAdapter(this, )
+
         }
     }
 }

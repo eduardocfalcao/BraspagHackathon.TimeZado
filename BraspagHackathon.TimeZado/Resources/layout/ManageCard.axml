@@ -15,10 +15,7 @@
             android:layout_height="40dp"/>
 
 
-  <ListView android:id="EmployeeView">
-    <AdapterView>
-      <TextView android:text="{Binding DisplayName}" />
-    </AdapterView>
+  <ListView android:id="@+id/CardsList">
   </ListView>
   
   
