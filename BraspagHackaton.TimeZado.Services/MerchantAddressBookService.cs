@@ -21,16 +21,11 @@ namespace BraspagHackathon.TimeZado.Services
     {
         private readonly Dictionary<Guid, Address> addresses;
 
-        public MerchantAddressBookService(ILocatorService locatorService)
+        public MerchantAddressBookService()
         {
             this.addresses = new Dictionary<Guid, Address>();
 
             this.Initialize();
-        }
-
-        public List<Merchant> GetNearbyMerchants(Address localAddress)
-        {
-            throw new NotImplementedException();                             
         }
 
         private void Initialize()

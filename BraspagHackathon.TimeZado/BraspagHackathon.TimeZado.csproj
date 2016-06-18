@@ -52,6 +52,7 @@
     <Compile Include="InsertCardWindow.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="ManageCardActivity.cs" />
+    <Compile Include="NearbyMerchantsActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,6 +64,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\InsertCardWindow.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\NearbyMerchants.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

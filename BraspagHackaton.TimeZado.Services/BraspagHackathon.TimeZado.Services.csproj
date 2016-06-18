@@ -46,6 +46,7 @@
     <Compile Include="ApiClient\BlackboxApiClient.cs" />
     <Compile Include="ApiClient\CreditCardApiClient.cs" />
     <Compile Include="ApiClient\Requests\CreditCard.cs" />
+    <Compile Include="ILocatorService.cs" />
     <Compile Include="IMerchantAddressBookService.cs" />
     <Compile Include="IMerchantService.cs" />
     <Compile Include="MerchantAddressBookService.cs" />
