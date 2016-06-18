@@ -10,9 +10,7 @@ namespace BraspagHackathon.TimeZado.Extensions
     {
         public static double DistanceInMilesFrom(this Address remoteAddress, Address localAddress)
         {
-            const int defaultValue = 3959;
-
-            return (defaultValue * Math.Acos(Math.Cos(localAddress.Latitude.ToRadians()) * Math.Cos(remoteAddress.Latitude.ToRadians()) * Math.Cos(remoteAddress.Longitude.ToRadians() - localAddress.Longitude.ToRadians()) + Math.Sin(localAddress.Latitude.ToRadians()) * Math.Sin(remoteAddress.Latitude.ToRadians())));
+            return (3959 * Math.Acos(Math.Cos(localAddress.Latitude.ToRadians()) * Math.Cos(remoteAddress.Latitude.ToRadians()) * Math.Cos(remoteAddress.Longitude.ToRadians() - localAddress.Longitude.ToRadians()) + Math.Sin(localAddress.Latitude.ToRadians()) * Math.Sin(remoteAddress.Latitude.ToRadians())));
         }
     }
 }
