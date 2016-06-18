@@ -23,8 +23,16 @@ namespace BraspagHackathon.TimeZado
             // Get our button from the layout resource,
             // and attach an event to it
             Button button = FindViewById<Button>(Resource.Id.OpenManageCardButton);
+            Button nearbyMerchantsButton = FindViewById<Button>(Resource.Id.OpenNearbyMerchantsButton);
 
             button.Click += OpenManageCardsActivity;
+            nearbyMerchantsButton.Click += NearbyMerchantsButton_Click;
+        }
+
+        private void NearbyMerchantsButton_Click(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(NearbyMerchantsActivity));
+            StartActivity(intent);
         }
 
         private void OpenManageCardsActivity(object sender, EventArgs e)

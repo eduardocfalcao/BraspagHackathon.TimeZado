@@ -11,5 +11,12 @@
     android:layout_height="40dp"
     android:text="@string/OpenManageCard"
     />
+
+  <Button
+    android:id="@+id/OpenNearbyMerchantsButton"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:text="Restaurantes próximos"
+    />
   
 </LinearLayout>
