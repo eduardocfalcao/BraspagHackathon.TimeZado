@@ -33,6 +33,20 @@ namespace BraspagHackathon.TimeZado
             this.addressText = FindViewById<TextView>(Resource.Id.Address);
 
             InitializeLocationManager();
+            GetCurrentLocation();
+        }
+
+        private async void GetCurrentLocation()
+        {
+            if (this.currentLocation == null)
+            {
+                this.addressText.Text = "Can't determine the current address. Try again in a few minutes.";
+                return;
+            }
+
+            Address address = await ReverseGeocodeCurrentLocation();
+
+            DisplayAddress(address);
         }
 
         private void InitializeLocationManager()
