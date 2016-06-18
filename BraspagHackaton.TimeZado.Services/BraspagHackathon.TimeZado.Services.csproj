@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiClient\BlackboxApiClient.cs" />
-    <Compile Include="AddressExtensions.cs" />
     <Compile Include="ApiClient\CreditCardApiClient.cs" />
     <Compile Include="ApiClient\Requests\CreditCard.cs" />
     <Compile Include="IMerchantAddressBookService.cs" />
