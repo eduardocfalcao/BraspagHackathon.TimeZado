@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BraspagHackaton.TimeZado.Services</RootNamespace>
-    <AssemblyName>BraspagHackaton.TimeZado.Services</AssemblyName>
+    <AssemblyName>BraspagHackathon.TimeZado.Services</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
