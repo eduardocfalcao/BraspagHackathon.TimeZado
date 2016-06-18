@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiClient\BlackboxApiClient.cs" />
     <Compile Include="IMerchantAddressBookService.cs" />
     <Compile Include="IMerchantLocatorService.cs" />
     <Compile Include="IMerchantService.cs" />
@@ -63,6 +64,10 @@
       <Project>{1d4947e5-58aa-4336-b3ff-e31ce09d44bd}</Project>
       <Name>BraspagHackathon.TimeZado.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ApiClient\Requests\" />
+    <Folder Include="ApiClient\Response\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
