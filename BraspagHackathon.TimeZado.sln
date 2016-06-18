@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BraspagHackathon.TimeZado.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BraspagHackathon.TimeZado.Model", "BraspagHackaton.TimeZado.Model\BraspagHackathon.TimeZado.Model.csproj", "{1D4947E5-58AA-4336-B3FF-E31CE09D44BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BraspagHackathon.TimeZado.Extensions", "BraspagHackathon.TimeZado.Extensions\BraspagHackathon.TimeZado.Extensions.csproj", "{723EA276-4106-4897-A5A5-73530B9C6AD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{1D4947E5-58AA-4336-B3FF-E31CE09D44BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D4947E5-58AA-4336-B3FF-E31CE09D44BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D4947E5-58AA-4336-B3FF-E31CE09D44BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{723EA276-4106-4897-A5A5-73530B9C6AD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{723EA276-4106-4897-A5A5-73530B9C6AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{723EA276-4106-4897-A5A5-73530B9C6AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{723EA276-4106-4897-A5A5-73530B9C6AD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
