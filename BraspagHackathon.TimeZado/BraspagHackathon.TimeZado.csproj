@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FirstAccessConfigurationActivity.cs" />
     <Compile Include="InsertCardActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="ManageCardActivity.cs" />
@@ -67,6 +68,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\NearbyMerchants.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\FirstAccessConfiguration.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -88,6 +92,12 @@
     <AndroidResource Include="Resources\layout\CardsListTemplate.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BraspagHackaton.TimeZado.Model\BraspagHackathon.TimeZado.Model.csproj">
+      <Project>{1D4947E5-58AA-4336-B3FF-E31CE09D44BD}</Project>
+      <Name>BraspagHackathon.TimeZado.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

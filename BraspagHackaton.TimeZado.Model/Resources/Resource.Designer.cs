@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("BraspagHackaton.TimeZado.Model.Resource", IsApplication=false)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("BraspagHackathon.TimeZado.Model.Resource", IsApplication=false)]
 
-namespace BraspagHackaton.TimeZado.Model
+namespace BraspagHackathon.TimeZado.Model
 {
 	
 	

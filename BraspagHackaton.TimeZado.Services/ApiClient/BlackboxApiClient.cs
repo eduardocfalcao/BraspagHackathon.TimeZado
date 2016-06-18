@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 
@@ -35,6 +36,8 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
                                                 Encoding.UTF8, 
                                                 "application/json");
 
+            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            
             var httpClient = new HttpClient();
             var response = await httpClient.PostAsync(uri, httpContent);
 
