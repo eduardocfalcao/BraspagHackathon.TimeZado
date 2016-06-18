@@ -29,7 +29,8 @@ namespace BraspagHackathon.TimeZado
 
         private void OpenInsertCardActivity(object sender, EventArgs e)
         {
-            //var intent = new Intent(this, typeof());
+            var intent = new Intent(this, typeof(InsertCardWindow));
+            StartActivity(intent);
         }
 
         private void ConfigureListView()

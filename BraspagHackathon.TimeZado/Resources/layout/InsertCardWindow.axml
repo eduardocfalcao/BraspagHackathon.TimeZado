@@ -8,8 +8,12 @@
       android:layout_width="match_parent"
       android:layout_height="40dp"
       android:text="Portador do cartão"
-       
        />
+
+  <EditText
+    android:id="@+id/Holder"
+    android:layout_width="fill_parent"
+    android:layout_height="40dp"/>
 
   <TextView
       android:layout_width="match_parent"
@@ -18,6 +22,11 @@
        
        />
 
+  <EditText
+   android:id="@+id/CardNumber"
+   android:layout_width="fill_parent"
+   android:layout_height="40dp"/>
+
   <TextView
       android:layout_width="match_parent"
       android:layout_height="40dp"
@@ -25,11 +34,29 @@
        
        />
 
+  <EditText
+   android:id="@+id/ValidThru"
+   android:layout_width="fill_parent"
+   android:layout_height="40dp"/>
+
   <TextView
-      android:layout_width="match_parent"
+      android:layout_width="fill_parent"
       android:layout_height="40dp"
       android:text="Código de verificação"
        
        />
+
+  <EditText
+  android:id="@+id/Cvv"
+  android:layout_width="50dp"
+  android:layout_height="40dp"/>
+
+  <Button 
+     android:id="@+id/InsertCardButton"
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     android:text="Inserir Cartão"
+     
+     />
   
 </LinearLayout>

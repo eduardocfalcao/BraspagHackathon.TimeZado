@@ -19,6 +19,16 @@ namespace BraspagHackathon.TimeZado
         {
             base.OnCreate(savedInstanceState);
 
+            SetContentView(Resource.Layout.InsertCardWindow);
 
+            var button = FindViewById<Button>(Resource.Id.InsertCardButton);
+
+            button.Click += InsertCard;
         }
+
+        private void InsertCard(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
