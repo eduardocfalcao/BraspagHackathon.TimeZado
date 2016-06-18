@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BraspagHackathon.TimeZado", "BraspagHackathon.TimeZado\BraspagHackathon.TimeZado.csproj", "{55603128-D476-4CBE-9634-93BEA65478CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BraspagHackaton.TimeZado.Services", "BraspagHackaton.TimeZado.Services\BraspagHackaton.TimeZado.Services.csproj", "{5CB9B057-A61B-4F2B-B6F2-BCA8C8B1F47F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BraspagHackathon.TimeZado.Services", "BraspagHackaton.TimeZado.Services\BraspagHackathon.TimeZado.Services.csproj", "{5CB9B057-A61B-4F2B-B6F2-BCA8C8B1F47F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BraspagHackaton.TimeZado.Model", "BraspagHackaton.TimeZado.Model\BraspagHackaton.TimeZado.Model.csproj", "{1D4947E5-58AA-4336-B3FF-E31CE09D44BD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BraspagHackathon.TimeZado.Model", "BraspagHackaton.TimeZado.Model\BraspagHackathon.TimeZado.Model.csproj", "{1D4947E5-58AA-4336-B3FF-E31CE09D44BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
