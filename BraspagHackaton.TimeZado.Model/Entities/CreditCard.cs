@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace BraspagHackathon.TimeZado.Entities
+namespace BraspagHackathon.TimeZado.Model.Entities
 {
     public class CreditCard
     {
