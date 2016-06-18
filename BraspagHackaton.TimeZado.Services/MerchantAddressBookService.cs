@@ -13,6 +13,7 @@ using Android.Widget;
 using BraspagHackathon.TimeZado.Model.Entities;
 using Java.Util;
 using BraspagHackathon.TimeZado.Services;
+using BraspagHackathon.TimeZado.Extensions;
 
 namespace BraspagHackathon.TimeZado.Services
 {
@@ -26,6 +27,12 @@ namespace BraspagHackathon.TimeZado.Services
 
             this.Initialize();
         }
+
+        public List<Merchant> GetNearbyMerchants(Address localAddress)
+        {
+            throw new NotImplementedException();                             
+        }
+
 
         private void Initialize()
         {

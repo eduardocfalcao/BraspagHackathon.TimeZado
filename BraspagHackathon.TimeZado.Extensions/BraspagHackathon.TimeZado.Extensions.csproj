@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5CB9B057-A61B-4F2B-B6F2-BCA8C8B1F47F}</ProjectGuid>
+    <ProjectGuid>{723EA276-4106-4897-A5A5-73530B9C6AD4}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BraspagHackaton.TimeZado.Services</RootNamespace>
-    <AssemblyName>BraspagHackaton.TimeZado.Services</AssemblyName>
+    <RootNamespace>BraspagHackathon.TimeZado.Extensions</RootNamespace>
+    <AssemblyName>BraspagHackathon.TimeZado.Extensions</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
@@ -43,12 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiClient\BlackboxApiClient.cs" />
     <Compile Include="AddressExtensions.cs" />
-    <Compile Include="IMerchantAddressBookService.cs" />
-    <Compile Include="IMerchantService.cs" />
-    <Compile Include="MerchantAddressBookService.cs" />
-    <Compile Include="TimeZadoMerchantCredentials.cs" />
+    <Compile Include="DoubleExtensions.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,20 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BraspagHackathon.TimeZado.Extensions\BraspagHackathon.TimeZado.Extensions.csproj">
-      <Project>{723ea276-4106-4897-a5a5-73530b9c6ad4}</Project>
-      <Name>BraspagHackathon.TimeZado.Extensions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BraspagHackaton.TimeZado.Model\BraspagHackathon.TimeZado.Model.csproj">
-      <Project>{1d4947e5-58aa-4336-b3ff-e31ce09d44bd}</Project>
-      <Name>BraspagHackathon.TimeZado.Model</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ApiClient\Requests\" />
-    <Folder Include="ApiClient\Response\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
