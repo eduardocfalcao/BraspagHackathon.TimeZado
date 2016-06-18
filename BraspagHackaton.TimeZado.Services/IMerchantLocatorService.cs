@@ -9,6 +9,6 @@ namespace BraspagHackathon.TimeZado.Services
 {
     public interface IMerchantLocatorService
     {
-        List<Merchant> GetNearbyMerchants(double latitude, double longitude, double maxDistanceInMiles = 5);
+        List<Merchant> GetNearbyMerchants(double latitude, double longitude, double maxDistanceInMiles = 2);
     }
 }
