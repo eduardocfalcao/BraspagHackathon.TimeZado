@@ -102,7 +102,7 @@ namespace BraspagHackathon.TimeZado
 			public const int ApplicationName = 2130968578;
 			
 			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			public const int InsertNewCard = 2130968576;
 			
 			// aapt resource value: 0x7f040001
 			public const int OpenManageCard = 2130968577;

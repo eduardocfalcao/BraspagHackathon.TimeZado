@@ -6,9 +6,20 @@
 
   <Button android:id="@+id/InsertCardButton"
           android:layout_width="match_parent"
-          android:layout_height="match_parent"
+          android:layout_height="40dp"
+          android:text="@string/InsertNewCard"
           />
-    
+
+  <TextView android:text="Cartões"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+
+
+  <ListView android:id="EmployeeView">
+    <AdapterView>
+      <TextView android:text="{Binding DisplayName}" />
+    </AdapterView>
+  </ListView>
   
   
 </LinearLayout>

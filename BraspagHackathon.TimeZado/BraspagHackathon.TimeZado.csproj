@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\CreditCard.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="ManageCardActivity.cs" />
     <Compile Include="Model\MerchantCredentials.cs" />

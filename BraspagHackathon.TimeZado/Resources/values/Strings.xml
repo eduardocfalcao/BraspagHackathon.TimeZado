@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
+    <string name="InsertNewCard">Inserir um novo cartão</string>
     <string name="OpenManageCard">Open Manage Card</string>
     <string name="ApplicationName">BraspagHackathon.TimeZado</string>
 </resources>
