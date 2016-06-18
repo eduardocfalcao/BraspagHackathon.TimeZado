@@ -13,6 +13,10 @@
   <TextView android:text="Cartões"
             android:layout_width="match_parent"
             android:layout_height="40dp"/>
+
+
+  <ListView android:id="@+id/CardsList">
+  </ListView>
   
   
 </LinearLayout>
