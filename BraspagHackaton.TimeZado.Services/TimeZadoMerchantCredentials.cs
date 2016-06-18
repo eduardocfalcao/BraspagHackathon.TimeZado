@@ -14,7 +14,7 @@ using Java.Util;
 
 namespace BraspagHackathon.TimeZado.Services
 {
-    public static class MerchantCredentials
+    public static class TimeZadoMerchantCredentials
     {
         public const string MerchantId = "FCF8CB06-0D89-400D-B43E-6D67BB5361AB";
 

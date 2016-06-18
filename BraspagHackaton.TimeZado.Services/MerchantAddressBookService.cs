@@ -21,7 +21,7 @@ namespace BraspagHackathon.TimeZado.Services
     {
         private readonly Dictionary<Guid, Address> addresses;
 
-        public MerchantAddressBookService()
+        public MerchantAddressBookService(ILocatorService locatorService)
         {
             this.addresses = new Dictionary<Guid, Address>();
 
@@ -33,11 +33,10 @@ namespace BraspagHackathon.TimeZado.Services
             throw new NotImplementedException();                             
         }
 
-
         private void Initialize()
         {
             // Inicializa o catálogo de endereços - neste exemplo preencherá com dados padrão em memória
-            this.addresses.Add(MerchantCredentials.MerchantIdGuid, MerchantCredentials.MerchantAddress);
+            this.addresses.Add(TimeZadoMerchantCredentials.MerchantIdGuid, TimeZadoMerchantCredentials.MerchantAddress);
         }
 
         public Address Get(Merchant merchant)
