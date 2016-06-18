@@ -8,7 +8,7 @@ using Android.OS;
 
 namespace BraspagHackathon.TimeZado
 {
-    [Activity(Label = "BraspagHackathon.TimeZado", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Time Zado App", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         int count = 1;
