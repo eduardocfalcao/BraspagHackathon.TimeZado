@@ -18,8 +18,14 @@ namespace BraspagHackathon.TimeZado.Model.Entities
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
+        [Unique]
         public string Key { get; set; }
 
         public string Value { get; set; }
+    }
+
+    public class GlobalConfigurationKeys
+    {
+        public const string CostumerId = "CostumerId";
     }
 }

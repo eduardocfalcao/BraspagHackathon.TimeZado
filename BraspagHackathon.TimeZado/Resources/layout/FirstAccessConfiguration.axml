@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <TextView
+     android:layout_width="match_parent"
+     android:layout_height="40dp"
+     android:text="Nome"
+       />
+
+  <EditText
+    android:id="@+id/FirstName"
+    android:layout_width="fill_parent"
+    android:layout_height="40dp"/>
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:text="Sobrenomes"
+       />
+
+  <EditText
+    android:id="@+id/LastName"
+    android:layout_width="fill_parent"
+    android:layout_height="40dp"/>
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:text="E-mail"
+       />
+
+  <EditText
+    android:id="@+id/Email"
+    android:layout_width="fill_parent"
+    android:layout_height="40dp"/>
+
+
+  <Button
+   android:id="@+id/CreateCustomerButton"
+   android:layout_width="fill_parent"
+   android:layout_height="wrap_content"
+   android:text="Inserir Cartão"
+     
+     />
+  
+</LinearLayout>
