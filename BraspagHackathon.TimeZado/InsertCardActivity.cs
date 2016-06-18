@@ -13,7 +13,7 @@ using Android.Widget;
 namespace BraspagHackathon.TimeZado
 {
     [Activity(Label = "Inserir Cartão de crédito")]
-    public class InsertCardWindow : Activity
+    public class InsertCardActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

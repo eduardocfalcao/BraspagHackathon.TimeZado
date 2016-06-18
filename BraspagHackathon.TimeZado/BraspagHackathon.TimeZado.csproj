@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InsertCardWindow.cs" />
+    <Compile Include="InsertCardActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="ManageCardActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
