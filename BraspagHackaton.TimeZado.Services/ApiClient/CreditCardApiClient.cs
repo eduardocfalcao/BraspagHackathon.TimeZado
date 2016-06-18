@@ -12,18 +12,11 @@ using Android.Widget;
 
 namespace BraspagHackaton.TimeZado.Services.ApiClient
 {
-    public class BlackboxApiClient
+    public class CreditCardApiClient
     {
-
-        public BlackboxApiClient(string apiUrl)
+        public CreditCardApiClient(BlackboxApiClient client)
         {
-            _apiUrl = apiUrl;
+                
         }
-
-        private readonly string _apiUrl;
-
-        public string ApiUrl { get { return _apiUrl; } }
-
-
     }
 }

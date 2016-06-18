@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="ApiClient\BlackboxApiClient.cs" />
     <Compile Include="AddressExtensions.cs" />
+    <Compile Include="ApiClient\CreditCardApiClient.cs" />
+    <Compile Include="ApiClient\Requests\CreditCard.cs" />
     <Compile Include="IMerchantAddressBookService.cs" />
     <Compile Include="IMerchantService.cs" />
     <Compile Include="MerchantAddressBookService.cs" />
@@ -69,7 +71,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ApiClient\Requests\" />
     <Folder Include="ApiClient\Response\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
