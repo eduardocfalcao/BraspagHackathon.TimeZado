@@ -9,6 +9,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace BraspagHackaton.TimeZado.Services.ApiClient
 {
@@ -25,9 +28,20 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
         public string ApiUrl { get { return _apiUrl; } }
 
 
-        public T Post<T>(string resourceUri, object postBody)
+        public async Task<T> Post<T>(string resourceUri, object postBody)
         {
-            return default(T);
+            var uri = ApiUrl + resourceUri;
+            var httpContent = new StringContent(JsonConvert.SerializeObject(postBody), 
+                                                Encoding.UTF8, 
+                                                "application/json");
+
+            var httpClient = new HttpClient();
+            var response = await httpClient.PostAsync(uri, httpContent);
+
+            response.EnsureSuccessStatusCode();
+            var resultContentString = await response.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<T>(resultContentString);
         }
 
         public void Put<T> (string resourceUri, object putBody)

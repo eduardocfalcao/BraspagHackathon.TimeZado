@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using BraspagHackaton.TimeZado.Services.ApiClient.Response;
 using BraspagHackaton.TimeZado.Services.ApiClient.Requests;
+using System.Threading.Tasks;
 
 namespace BraspagHackaton.TimeZado.Services.ApiClient
 {
@@ -25,9 +26,9 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
 
         public BlackboxApiClient BlackboxApiClient { get { return _blackboxApiClient; } }
 
-        public CreditCardCreateResponse Create(CreditCard creditCard)
+        public async Task<CreditCardCreateResponse> Create(CreditCard creditCard)
         {
-            return BlackboxApiClient.Post<CreditCardCreateResponse>("creditCard", creditCard);           
+            return await BlackboxApiClient.Post<CreditCardCreateResponse>("creditCard", creditCard);           
         }
     }
 }
