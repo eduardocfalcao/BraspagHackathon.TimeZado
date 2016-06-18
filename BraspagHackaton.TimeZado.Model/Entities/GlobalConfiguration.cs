@@ -13,17 +13,13 @@ using SQLite;
 
 namespace BraspagHackathon.TimeZado.Model.Entities
 {
-    public class CreditCard
+    public class GlobalConfiguration
     {
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        public DateTime CreatedOn { get; set; }
+        public string Key { get; set; }
 
-        public string Token { get; set; }
-
-        public string MaskedValue { get; set; }
-
-        public int CostumerId { get; set; } //campo é necessário mesmo???
+        public string Value { get; set; }
     }
 }

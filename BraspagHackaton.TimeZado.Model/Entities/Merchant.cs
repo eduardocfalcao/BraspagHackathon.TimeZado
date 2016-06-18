@@ -9,11 +9,13 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using SQLite;
 
 namespace BraspagHackathon.TimeZado.Model.Entities
 {
     public class Merchant
     {
+        [PrimaryKey]
         public Guid MerchantId { get; set; }
 
         public DateTime CreatedOn { get; set; }
