@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using BraspagHackathon.TimeZado.Services;
 using BraspagHackathon.TimeZado.Model.Entities;
 using BraspagHackathon.TimeZado.Adpaters;
+using System.Threading;
 
 namespace BraspagHackathon.TimeZado
 {
@@ -42,24 +43,26 @@ namespace BraspagHackathon.TimeZado
 
             this.merchantLocatorService = new MerchantLocatorService();
 
+            DisplayFindingLocation();
             InitializeLocationManager();
-            DisplayCurrentLocation();
-            FindNearbyMerchants();
+        }
+
+        private void DisplayFindingLocation()
+        {
+            this.locationText.Text = "Procurando minha localização...";
+            this.addressText.Text = string.Empty;
         }
 
         private void DisplayCurrentLocation()
         {
             if (this.currentLocation == null)
             {
-                this.locationText.Text = "Procurando minha localização...";
-                this.addressText.Text = string.Empty;
+                DisplayFindingLocation();
             }
             else
             {
                 this.locationText.Text = string.Format("{0:f6}, {1:f6}", this.currentLocation.Latitude, this.currentLocation.Longitude);
-
                 this.currentAddress = ReverseGeocodeCurrentLocation();
-
                 this.addressText.Text = FormatAddress(this.currentAddress);
             }
         }
@@ -142,6 +145,7 @@ namespace BraspagHackathon.TimeZado
             this.currentLocation = location;
           
             DisplayCurrentLocation();
+            FindNearbyMerchants();
         }
 
         private static string FormatAddress(Address address)
