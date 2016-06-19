@@ -15,7 +15,7 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient.Requests
     public class Customer
     {
 
-        public string FisrtName { get; set; }
+        public string FirstName { get; set; }
 
         public string LastName { get; set; }
 
