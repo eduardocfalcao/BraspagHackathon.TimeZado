@@ -20,8 +20,6 @@ namespace BraspagHackathon.TimeZado
         {
             base.OnCreate(bundle);
 
-            var dataProvider = InMemoryDataProvider.GetDataProvider();
-
             SetContentView(Resource.Layout.Main);
 
             Button button = FindViewById<Button>(Resource.Id.OpenManageCardButton);
@@ -30,16 +28,14 @@ namespace BraspagHackathon.TimeZado
             button.Click += OpenManageCardsActivity;
             nearbyMerchantsButton.Click += NearbyMerchantsButton_Click;
 
-            CreateDevicesList(dataProvider);
+            CreateDevicesList();
         }
 
-        private void CreateDevicesList(InMemoryDataProvider dataProvider)
+        private void CreateDevicesList()
         {
             ListView devicesList = FindViewById<ListView>(Resource.Id.DeviceList);
 
-            var devices = dataProvider.Read<DeviceDisplayData>();
-
-            if (devices != null)
+            if (DataHolder.Devices != null)
             {
                 deviceListAdapter = new DeviceListAdapter(this, devices);
                 devicesList.Adapter = deviceListAdapter;
@@ -52,8 +48,7 @@ namespace BraspagHackathon.TimeZado
         {
             base.OnResume();
 
-            var dataProvider = InMemoryDataProvider.GetDataProvider();
-            CreateDevicesList(dataProvider);
+            CreateDevicesList();
         }
 
         private void DevicesList_ItemClick(object sender, AdapterView.ItemClickEventArgs args)

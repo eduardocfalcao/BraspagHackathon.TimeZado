@@ -24,7 +24,6 @@ namespace BraspagHackathon.TimeZado
         private TextView offerMerchantNameText;
 
         private Button createDeviceButton;
-        private Button createDeviceAndShopButton;
 
         public int offerId;
         public int customerId;
@@ -41,10 +40,8 @@ namespace BraspagHackathon.TimeZado
             this.offerMerchantNameText = FindViewById<TextView>(Resource.Id.OfferMerchantNameText);
 
             this.createDeviceButton = FindViewById<Button>(Resource.Id.CreateDeviceButton);
-            this.createDeviceAndShopButton = FindViewById<Button>(Resource.Id.CreateButtonAndShop);
 
             createDeviceButton.Click += CreateDeviceButton_Click;
-            createDeviceAndShopButton.Click += CreateDeviceAndShopButton_Click;
 
             var dataProvider = InMemoryDataProvider.GetDataProvider();
 
@@ -59,11 +56,6 @@ namespace BraspagHackathon.TimeZado
             this.offerMerchantNameText.Text = string.Format("Oferta de {0}", Intent.GetStringExtra("MerchantName"));
         }
 
-        private void CreateDeviceAndShopButton_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         private void CreateDeviceButton_Click(object sender, EventArgs e)
         {
             var service = new DeviceService();
@@ -75,8 +67,6 @@ namespace BraspagHackathon.TimeZado
 
                 service.UpdateVirutalDevice(updatedDevice =>
                 {
-                    var dataProvider = InMemoryDataProvider.GetDataProvider();
-
                     var data = new DeviceDisplayData
                     {
                         Device = updatedDevice,
@@ -86,7 +76,7 @@ namespace BraspagHackathon.TimeZado
                         Quantity = this.offerQuantityText.Text
                     };
 
-                    dataProvider.Insert(data);
+                    DataHolder.Devices.Add(data);
 
                     var intent = new Intent(this, typeof(MainActivity));
                     StartActivity(intent);
