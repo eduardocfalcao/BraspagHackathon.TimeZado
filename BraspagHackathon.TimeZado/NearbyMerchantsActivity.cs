@@ -71,7 +71,7 @@ namespace BraspagHackathon.TimeZado
             if (this.nearbyMerchants != null && this.nearbyMerchants.Any())
                 return;
 
-            var nearbyMerchants = this.merchantAddressBookService.GetNearbyMerchants(this.currentAddress);
+            this.nearbyMerchants = this.merchantAddressBookService.GetNearbyMerchants(this.currentAddress);
 
             var nearbyMerchantsFormatted = nearbyMerchants.Select(m => m.Name).ToArray();
 

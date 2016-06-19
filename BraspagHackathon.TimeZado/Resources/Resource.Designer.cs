@@ -67,8 +67,8 @@ namespace BraspagHackathon.TimeZado
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050012
-			public const int Address = 2131034130;
+			// aapt resource value: 0x7f050013
+			public const int Address = 2131034131;
 			
 			// aapt resource value: 0x7f050000
 			public const int CardNumber = 2131034112;
@@ -97,31 +97,29 @@ namespace BraspagHackathon.TimeZado
 			// aapt resource value: 0x7f050002
 			public const int LastName = 2131034114;
 			
+			// aapt resource value: 0x7f050012
+			public const int Location = 2131034130;
+			
 			// aapt resource value: 0x7f05000f
-			public const int Location = 2131034127;
+			public const int MerchantInfo_Address = 2131034127;
+			
+			// aapt resource value: 0x7f050010
+			public const int MerchantInfo_Description = 2131034128;
 			
 			// aapt resource value: 0x7f05000e
-			public const int MerchantInfo_Address = 2131034126;
-			
-			// aapt resource value: 0x7f05000f
-			public const int MerchantInfo_Description = 2131034127;
+			public const int MerchantInfo_Name = 2131034126;
 			
 			// aapt resource value: 0x7f050011
-			public const int NearbyMerchantsList = 2131034129;
+			public const int MerchantInfo_Site = 2131034129;
 			
-			// aapt resource value: 0x7f050012
-			public const int OfferInfo = 2131034130;
+			// aapt resource value: 0x7f050014
+			public const int NearbyMerchantsList = 2131034132;
+			
+			// aapt resource value: 0x7f050015
+			public const int OfferInfo = 2131034133;
 			
 			// aapt resource value: 0x7f05000d
 			public const int OffersList = 2131034125;
-
-			public const int MerchantInfo_Name = 2131034125;
-			
-			// aapt resource value: 0x7f050010
-			public const int MerchantInfo_Site = 2131034128;
-			
-			// aapt resource value: 0x7f050013
-			public const int NearbyMerchantsList = 2131034131;
 			
 			// aapt resource value: 0x7f05000b
 			public const int OpenInsertCardWindowButton = 2131034123;
