@@ -45,7 +45,7 @@ namespace BraspagHackathon.TimeZado
                 Number = FindViewById<EditText>(Resource.Id.CardNumber).Text,
                 Cvv = FindViewById<EditText>(Resource.Id.Cvv).Text,
                 ValidThru = FindViewById<EditText>(Resource.Id.ValidThru).Text,
-                CostumerId = customerId
+                CustomerId = customerId
             };
 
             var creditCardResponse = await apiClient.Create(creditCard);

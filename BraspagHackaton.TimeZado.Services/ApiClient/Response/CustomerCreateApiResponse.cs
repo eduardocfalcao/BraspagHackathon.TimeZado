@@ -25,6 +25,8 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient.Response
 
         public string LastName { get; set; }
 
+        public string Email { get; set; }
+
         public int CreditCardId { get; set; }
 
         public int AdressId { get; set; }

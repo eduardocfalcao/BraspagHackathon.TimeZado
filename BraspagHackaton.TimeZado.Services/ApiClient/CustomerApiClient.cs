@@ -23,9 +23,14 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
             return await BlackboxApiClient.Post<CustomerCreateApiResponse>("customer", customer);
         }
 
-        public async Task<CustomerCreateApiResponse> Update(CustomerUpdateDefaultCard updateCustomer)
+        public async Task<CustomerCreateApiResponse> Update(CustomerUpdateRequest updateCustomer)
         {
             return await BlackboxApiClient.Put<CustomerCreateApiResponse>("customer", updateCustomer);
+        }
+
+        public async Task<CustomerCreateApiResponse> Get(int id)
+        {
+            return await BlackboxApiClient.Get<CustomerCreateApiResponse>(string.Concat("customer/", id.ToString()));
         }
     }
 }
