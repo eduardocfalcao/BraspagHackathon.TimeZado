@@ -26,6 +26,11 @@ namespace BraspagHackathon.TimeZado
             button.Click += OpenManageCardsActivity;
             nearbyMerchantsButton.Click += NearbyMerchantsButton_Click;
 
+            CreateDevicesList(dataProvider);
+        }
+
+        private void CreateDevicesList(InMemoryDataProvider dataProvider)
+        {
             ListView devicesList = FindViewById<ListView>(Resource.Id.DeviceList);
 
             var devices = dataProvider.Read<DeviceDisplayData>();
@@ -37,6 +42,14 @@ namespace BraspagHackathon.TimeZado
             }
 
             devicesList.ItemClick += DevicesList_ItemClick;
+        }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+            var dataProvider = InMemoryDataProvider.GetDataProvider();
+            CreateDevicesList(dataProvider);
         }
 
         private void DevicesList_ItemClick(object sender, AdapterView.ItemClickEventArgs e)

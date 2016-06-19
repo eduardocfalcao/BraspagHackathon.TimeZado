@@ -12,6 +12,8 @@ using BraspagHackathon.TimeZado.Adpaters;
 using BraspagHackaton.TimeZado.Model;
 using BraspagHackathon.TimeZado.Model.Entities;
 using BraspagHackaton.TimeZado.Services.ApiClient;
+using BraspagHackaton.TimeZado.Services.ApiClient.Requests;
+using BraspagHackaton.TimeZado.Services.ApiClient.Response;
 
 namespace BraspagHackathon.TimeZado
 {
@@ -86,16 +88,30 @@ namespace BraspagHackathon.TimeZado
             alertDialog.SetTitle("Confirmar de cartão de crédito para compras");
             alertDialog.SetIcon(Android.Resource.Drawable.IcDialogAlert);
             alertDialog.SetMessage(string.Format("Deseja utilizar o cartão {0} como meio de pagamento para suas próximas compras?",creditCard.MaskedValue));
-            alertDialog.SetButton("Confirmar", (s, e) =>
+            alertDialog.SetButton("Confirmar", async (s, e) =>
             {
                 var provider = InMemoryDataProvider.GetDataProvider();
 
                 var customerIdConfiguration = provider.Read<GlobalConfiguration>()
                                                       .FirstOrDefault(x => x.Key == GlobalConfigurationKeys.CostumerId);
 
+                var customerApiClient = new CustomerApiClient();
+
+                var customer = await customerApiClient.Get(int.Parse(customerIdConfiguration.Value));
+
+                var updateCustomer = new CustomerUpdateRequest()
+                {
+                    FirstName = customer.FirstName,
+                    LastName = customer.LastName,
+                    CreditCardId = creditCard.Id,
+                    Id = int.Parse(customerIdConfiguration.Value),
+                    AddressId = customer.AdressId,
+                    Email = customer.Email
+                };
+
                 
-
-
+                customer = await customerApiClient.Update(updateCustomer);
+                
                 alertDialog.Dismiss();
             });
 

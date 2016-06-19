@@ -22,6 +22,6 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient.Requests
 
         public string Cvv { get; set; }
 
-        public int CostumerId { get; set; }
+        public int CustomerId { get; set; }
     }
 }
