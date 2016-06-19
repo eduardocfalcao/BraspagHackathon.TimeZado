@@ -25,10 +25,9 @@ namespace BraspagHackathon.TimeZado
         private TextView locationText;
         private TextView addressText;
         private string locationProvider;
-        private MerchantAddressBookService merchantAddressBookService;
+        private MerchantLocatorService merchantLocatorService;
         private ListView nearbyMerchantsList;
         private MerchantListAdapter merchantAdapter;
-        private List<Merchant> nearbyMerchants;
         private Address currentAddress;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -41,7 +40,7 @@ namespace BraspagHackathon.TimeZado
             this.addressText = FindViewById<TextView>(Resource.Id.Address);
             this.nearbyMerchantsList = FindViewById<ListView>(Resource.Id.NearbyMerchantsList);
 
-            this.merchantAddressBookService = new MerchantAddressBookService();
+            this.merchantLocatorService = new MerchantLocatorService();
 
             InitializeLocationManager();
             DisplayCurrentLocation();
@@ -67,17 +66,12 @@ namespace BraspagHackathon.TimeZado
 
         private void FindNearbyMerchants()
         {
-            
-            if (this.nearbyMerchants != null && this.nearbyMerchants.Any())
-                return;
-
-            this.nearbyMerchants = this.merchantAddressBookService.GetNearbyMerchants(this.currentAddress);
-
-            var nearbyMerchantsFormatted = nearbyMerchants.Select(m => m.Name).ToArray();
-
-            this.merchantAdapter = new MerchantListAdapter(this, nearbyMerchants);
-
-            this.nearbyMerchantsList.Adapter = this.merchantAdapter;
+            this.merchantLocatorService.GetNearbyMerchants(merchants =>
+            {
+                this.merchantAdapter = new MerchantListAdapter(this, merchants);
+                this.nearbyMerchantsList.Adapter = this.merchantAdapter;
+            },
+            this.currentAddress);
         }
 
         private void InitializeLocationManager()

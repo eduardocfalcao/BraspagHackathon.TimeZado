@@ -1,15 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Java.Lang;
 using BraspagHackathon.TimeZado.Model.Entities;
 using BraspagHackathon.TimeZado.Services;
 
@@ -17,16 +11,14 @@ namespace BraspagHackathon.TimeZado.Adpaters
 {
     public class MerchantListAdapter : BaseAdapter
     {
-        public MerchantListAdapter(Activity context, List<Merchant> merchants)
+        public MerchantListAdapter(Activity context, List<MerchantGpsData> merchantsGpsData)
         {
-            this.merchants = merchants;
+            this.merchants = merchantsGpsData;
             this.context = context;
-            this.merchantAddressBookService = new MerchantAddressBookService();
         }
 
-        private List<Merchant> merchants;
+        private List<MerchantGpsData> merchants;
         private Activity context;
-        private MerchantAddressBookService merchantAddressBookService;
 
         public override int Count
         {
@@ -44,7 +36,7 @@ namespace BraspagHackathon.TimeZado.Adpaters
             return null; 
         }
 
-        public Merchant GetMerchant(int position)
+        public MerchantGpsData GetMerchantGpsData(int position)
         {
             return this.merchants.ElementAt(position);
         }
@@ -59,25 +51,22 @@ namespace BraspagHackathon.TimeZado.Adpaters
 
         public Guid GetMerchantId(int position)
         {
-            return GetMerchant(position).MerchantId;
+            return GetMerchantGpsData(position).Merchant.MerchantId;
         }
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            var merchant = GetMerchant(position);
+            var merchantGpsData = GetMerchantGpsData(position);
 
             if (convertView == null)
             {
                 convertView = LayoutInflater.From(context).Inflate(Resource.Layout.MerchantsListTemplate, null);
             }
-            var address = this.merchantAddressBookService.Get(merchant);
 
-            convertView.FindViewById<TextView>(Resource.Id.MerchantInfo_Name).Text = merchant.Name;
-            convertView.FindViewById<TextView>(Resource.Id.MerchantInfo_Description).Text = merchant.Description;
-            convertView.FindViewById<TextView>(Resource.Id.MerchantInfo_Site).Text = merchant.SiteUrl;
-            convertView.FindViewById<TextView>(Resource.Id.MerchantInfo_Address).Text = string.Concat(address.FeatureName,
-                                                                                                      " - ",
-                                                                                                      address.Thoroughfare);
+            convertView.FindViewById<TextView>(Resource.Id.MerchantInfo_Name).Text = merchantGpsData.Merchant.Name;
+            convertView.FindViewById<TextView>(Resource.Id.MerchantInfo_Description).Text = merchantGpsData.Merchant.Description;
+            convertView.FindViewById<TextView>(Resource.Id.MerchantInfo_Site).Text = merchantGpsData.Merchant.SiteUrl;
+            convertView.FindViewById<TextView>(Resource.Id.MerchantInfo_Address).Text = string.Concat(merchantGpsData.Address.FeatureName, " - ", merchantGpsData.Address.Thoroughfare);
 
             return convertView;
         }

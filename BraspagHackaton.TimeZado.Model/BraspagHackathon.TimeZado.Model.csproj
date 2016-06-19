@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\MerchantGpsData.cs" />
     <Compile Include="Entities\Offer.cs" />
     <Compile Include="InMemoryDataProvider.cs" />
     <Compile Include="DataProvider.cs" />

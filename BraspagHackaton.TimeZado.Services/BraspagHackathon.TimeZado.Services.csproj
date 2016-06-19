@@ -57,9 +57,9 @@
     <Compile Include="ApiClient\Requests\Customer.cs" />
     <Compile Include="ApiClient\Response\CreditCardCreateResponse.cs" />
     <Compile Include="ApiClient\Response\CustomerCreateApiResponse.cs" />
-    <Compile Include="MerchantAddressBookService.cs" />
+    <Compile Include="MerchantAddressDictionary.cs" />
+    <Compile Include="MerchantLocatorService.cs" />
     <Compile Include="MerchantOffersService.cs" />
-    <Compile Include="TimeZadoMerchantCredentials.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
