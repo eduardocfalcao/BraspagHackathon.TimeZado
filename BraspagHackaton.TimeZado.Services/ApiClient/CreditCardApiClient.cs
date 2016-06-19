@@ -21,6 +21,11 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
         {
             _blackboxApiClient = client;   
         }
+        public CreditCardApiClient()
+            : this (new BlackboxApiClient()) 
+        {
+                
+        }
 
         private readonly BlackboxApiClient _blackboxApiClient;
 

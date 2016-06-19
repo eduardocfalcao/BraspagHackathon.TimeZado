@@ -33,7 +33,7 @@ namespace BraspagHackathon.TimeZado
 
         private async void CreateCustomerButton_Click(object sender, EventArgs e)
         {
-            var api = new CustomerApiClient(new BlackboxApiClient("https://braspaglabs.azure-api.net/blackbox/api/v1/"));
+            var api = new CustomerApiClient(new BlackboxApiClient());
 
             var customerApiRequest = new Customer()
             {
