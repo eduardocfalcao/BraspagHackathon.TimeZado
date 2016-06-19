@@ -28,6 +28,8 @@ namespace BraspagHackathon.TimeZado
 		{
 			global::BraspagHackathon.TimeZado.Model.Resource.String.ApplicationName = global::BraspagHackathon.TimeZado.Resource.String.ApplicationName;
 			global::BraspagHackathon.TimeZado.Model.Resource.String.Hello = global::BraspagHackathon.TimeZado.Resource.String.Hello;
+			global::BraspagHackaton.TimeZado.Services.Resource.String.ApplicationName = global::BraspagHackathon.TimeZado.Resource.String.ApplicationName;
+			global::BraspagHackaton.TimeZado.Services.Resource.String.Hello = global::BraspagHackathon.TimeZado.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
@@ -94,6 +96,9 @@ namespace BraspagHackathon.TimeZado
 			
 			// aapt resource value: 0x7f05000d
 			public const int Location = 2131034125;
+			
+			// aapt resource value: 0x7f05000f
+			public const int NearbyMerchantsList = 2131034127;
 			
 			// aapt resource value: 0x7f05000b
 			public const int OpenInsertCardWindowButton = 2131034123;

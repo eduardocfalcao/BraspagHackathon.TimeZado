@@ -14,24 +14,44 @@ using BraspagHackathon.TimeZado.Model.Entities;
 using Java.Util;
 using BraspagHackathon.TimeZado.Services;
 using BraspagHackathon.TimeZado.Extensions;
+using BraspagHackaton.TimeZado.Services.ApiClient;
+using System.Threading.Tasks;
 
 namespace BraspagHackathon.TimeZado.Services
 {
-    public class MerchantAddressBookService : IMerchantAddressBookService
+    public class MerchantAddressBookService
     {
         private readonly Dictionary<Guid, Address> addresses;
+        private List<Merchant> merchants;
 
         public MerchantAddressBookService()
         {
             this.addresses = new Dictionary<Guid, Address>();
 
-            this.Initialize();
+            Task.Run(this.Initialize).Wait();
         }
 
-        private void Initialize()
+        private async Task Initialize()
         {
+            // Inicializa o cache de lojas - isto poderia ser diferente se pudéssemos buscar na API lojas por endereço físico
+            this.merchants = await LoadMerchantsFromApi();
+
             // Inicializa o catálogo de endereços - neste exemplo preencherá com dados padrão em memória
             this.addresses.Add(TimeZadoMerchantCredentials.MerchantIdGuid, TimeZadoMerchantCredentials.MerchantAddress);
+        }
+
+        private async Task<List<Merchant>> LoadMerchantsFromApi()
+        {
+            var api = new MerchantApiClient(new BlackboxApiClient(@"https://braspaglabs.azure-api.net/blackbox/api/v1/"));
+
+            return await api.GetAll();
+        }
+
+        public List<Merchant> GetNearbyMerchants(Address localAddress, double maxDistanceInMiles = 2)
+        {
+            var nearbyKeys = this.addresses.Where(a => a.Value.DistanceInMilesFrom(localAddress) <= maxDistanceInMiles).Select(a => a.Key);
+
+            return merchants.Where(m => nearbyKeys.Contains(m.MerchantId)).ToList();
         }
 
         public Address Get(Merchant merchant)

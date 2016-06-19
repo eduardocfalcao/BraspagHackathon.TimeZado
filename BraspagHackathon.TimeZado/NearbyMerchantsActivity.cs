@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Android.Locations;
 using System.Threading.Tasks;
+using BraspagHackathon.TimeZado.Services;
 
 namespace BraspagHackathon.TimeZado
 {
@@ -21,7 +22,8 @@ namespace BraspagHackathon.TimeZado
         private LocationManager locationManager;
         private TextView locationText;
         private TextView addressText;
-        string locationProvider;
+        private string locationProvider;
+        private MerchantAddressBookService merchantAddressBookService;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -31,6 +33,8 @@ namespace BraspagHackathon.TimeZado
 
             this.locationText = FindViewById<TextView>(Resource.Id.Location);
             this.addressText = FindViewById<TextView>(Resource.Id.Address);
+
+            this.merchantAddressBookService = new MerchantAddressBookService();
 
             InitializeLocationManager();
             DisplayCurrentLocation();
@@ -50,7 +54,14 @@ namespace BraspagHackathon.TimeZado
                 var address = ReverseGeocodeCurrentLocation();
 
                 this.addressText.Text = FormatAddress(address);
+
+                FindNearbyMerchants(address);
             }
+        }
+
+        private void FindNearbyMerchants(Address address)
+        {
+            var nearbyMerchants = this.merchantAddressBookService.GetNearbyMerchants(address);
         }
 
         private void InitializeLocationManager()
