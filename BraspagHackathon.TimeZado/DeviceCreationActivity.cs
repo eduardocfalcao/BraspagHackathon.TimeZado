@@ -68,7 +68,31 @@ namespace BraspagHackathon.TimeZado
         {
             var service = new DeviceService();
 
+            service.CreateVirtualDevice(device =>
+            {
+                device.CustomerId = this.customerId;
+                device.OfferId = this.offerId;
 
+                service.UpdateVirutalDevice(updatedDevice =>
+                {
+                    var dataProvider = InMemoryDataProvider.GetDataProvider();
+
+                    var data = new DeviceDisplayData
+                    {
+                        Device = updatedDevice,
+                        MerchantName = this.offerMerchantNameText.Text,
+                        OfferName = this.offerDescriptionText.Text,
+                        Price = this.offerPriceText.Text,
+                        Quantity = this.offerQuantityText.Text
+                    };
+
+                    dataProvider.Insert(data);
+
+                    var intent = new Intent(this, typeof(MainActivity));
+                    StartActivity(intent);
+                },
+                device);
+            });
         }
     }
 }
