@@ -33,9 +33,4 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/CreateDeviceButton" />
-    <Button
-        android:text="Criar botão e comprar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/CreateButtonAndShop" />
 </LinearLayout>
