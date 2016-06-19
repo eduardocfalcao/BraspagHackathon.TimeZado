@@ -27,7 +27,7 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
 
         public async Task<List<Merchant>> GetAll()
         {
-            return await BlackboxApiClient.Post<List<Merchant>>("merchant", string.Empty);
+            return await BlackboxApiClient.Get<List<Merchant>>("merchant");
         }
     }
 }
