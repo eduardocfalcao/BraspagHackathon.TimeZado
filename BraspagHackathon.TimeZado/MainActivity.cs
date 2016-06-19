@@ -24,8 +24,6 @@ namespace BraspagHackathon.TimeZado
 
             var dataProvider = InMemoryDataProvider.GetDataProvider();
 
-            ConfigureDefaultUser(dataProvider);
-
             //CheckIfIsFirstAccess(dataProvider);
 
             // Set our view from the "main" layout resource

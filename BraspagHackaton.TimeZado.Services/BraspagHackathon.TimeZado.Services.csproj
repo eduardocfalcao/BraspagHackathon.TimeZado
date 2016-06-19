@@ -54,8 +54,6 @@
     <Compile Include="ApiClient\MerchantApiClient.cs" />
     <Compile Include="ApiClient\CustomerApiClient.cs" />
     <Compile Include="ApiClient\OfferApiClient.cs" />
-    <Compile Include="ApiClient\Requests\CreditCard.cs" />
-    <Compile Include="ApiClient\Requests\Customer.cs" />
     <Compile Include="ApiClient\Requests\CustomerUpdateDefaultCard.cs" />
     <Compile Include="ApiClient\Response\CreditCardResponse.cs" />
     <Compile Include="ApiClient\Requests\CreateDeviceRequest.cs" />

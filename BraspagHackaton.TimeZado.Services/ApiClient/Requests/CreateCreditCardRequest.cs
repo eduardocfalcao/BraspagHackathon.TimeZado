@@ -16,7 +16,7 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient.Requests
     {
         public string Holder { get; set; }
 
-        public string CardNumer { get; set; }
+        public string Number { get; set; }
 
         public string ValidThru { get; set; }
 

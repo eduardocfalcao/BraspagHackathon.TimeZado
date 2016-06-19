@@ -70,28 +70,29 @@ namespace BraspagHackathon.TimeZado
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050015
-			public const int Address = 2131034133;
+			// aapt resource value: 0x7f05001b
+			public const int Address = 2131034139;
 			
 			// aapt resource value: 0x7f050000
 			public const int CardInfo_CardNumber = 2131034112;
 			
-			// aapt resource value: 0x7f050012
-			public const int CardsList = 2131034130;
+			// aapt resource value: 0x7f05000c
+			public const int CardNumber = 2131034124;
+			
+			// aapt resource value: 0x7f050013
+			public const int CardsList = 2131034131;
 			
 			// aapt resource value: 0x7f050006
 			public const int CreateButtonAndShop = 2131034118;
 			
 			// aapt resource value: 0x7f05000a
 			public const int CreateCustomerButton = 2131034122;
-			// aapt resource value: 0x7f050008
-			public const int Cvv = 2131034120;
 			
 			// aapt resource value: 0x7f050005
 			public const int CreateDeviceButton = 2131034117;
 			
-			// aapt resource value: 0x7f05000d
-			public const int Cvv = 2131034125;
+			// aapt resource value: 0x7f05000e
+			public const int Cvv = 2131034126;
 			
 			// aapt resource value: 0x7f050009
 			public const int Email = 2131034121;
@@ -102,46 +103,47 @@ namespace BraspagHackathon.TimeZado
 			// aapt resource value: 0x7f05000b
 			public const int Holder = 2131034123;
 			
-			// aapt resource value: 0x7f05000e
-			public const int InsertCardButton = 2131034126;
+			// aapt resource value: 0x7f05000f
+			public const int InsertCardButton = 2131034127;
 			
 			// aapt resource value: 0x7f050008
 			public const int LastName = 2131034120;
 			
-			// aapt resource value: 0x7f050018
-			public const int Location = 2131034136;
-			
-			// aapt resource value: 0x7f050015
-			public const int MerchantInfo_Address = 2131034133;
+			// aapt resource value: 0x7f05001a
+			public const int Location = 2131034138;
 			
 			// aapt resource value: 0x7f050016
-			public const int MerchantInfo_Description = 2131034134;
-			// aapt resource value: 0x7f050011
-			public const int MerchantInfo_Distance = 2131034129;
+			public const int MerchantInfo_Address = 2131034134;
 			
-			// aapt resource value: 0x7f050014
-			public const int MerchantInfo_Name = 2131034132;
+			// aapt resource value: 0x7f050018
+			public const int MerchantInfo_Description = 2131034136;
 			
 			// aapt resource value: 0x7f050017
-			public const int MerchantInfo_Site = 2131034135;
+			public const int MerchantInfo_Distance = 2131034135;
 			
-			// aapt resource value: 0x7f05001a
-			public const int NearbyMerchantsList = 2131034138;
+			// aapt resource value: 0x7f050015
+			public const int MerchantInfo_Name = 2131034133;
+			
+			// aapt resource value: 0x7f050019
+			public const int MerchantInfo_Site = 2131034137;
+			
+			// aapt resource value: 0x7f05001c
+			public const int NearbyMerchantsList = 2131034140;
 			
 			// aapt resource value: 0x7f050001
 			public const int OfferDescriptionText = 2131034113;
 			
+			// aapt resource value: 0x7f05001f
+			public const int OfferInfo_Description = 2131034143;
+			
 			// aapt resource value: 0x7f05001d
-			public const int OfferInfo_Description = 2131034141;
-			
-			// aapt resource value: 0x7f05001b
-			public const int OfferInfo_Image = 2131034139;
-			
-			// aapt resource value: 0x7f05001c
-			public const int OfferInfo_Name = 2131034140;
+			public const int OfferInfo_Image = 2131034141;
 			
 			// aapt resource value: 0x7f05001e
-			public const int OfferInfo_Price = 2131034142;
+			public const int OfferInfo_Name = 2131034142;
+			
+			// aapt resource value: 0x7f050020
+			public const int OfferInfo_Price = 2131034144;
 			
 			// aapt resource value: 0x7f050004
 			public const int OfferMerchantNameText = 2131034116;
@@ -152,20 +154,20 @@ namespace BraspagHackathon.TimeZado
 			// aapt resource value: 0x7f050002
 			public const int OfferQuantityText = 2131034114;
 			
-			// aapt resource value: 0x7f050013
-			public const int OffersList = 2131034131;
+			// aapt resource value: 0x7f050014
+			public const int OffersList = 2131034132;
 			
-			// aapt resource value: 0x7f050011
-			public const int OpenInsertCardWindowButton = 2131034129;
-			
-			// aapt resource value: 0x7f05000f
-			public const int OpenManageCardButton = 2131034127;
+			// aapt resource value: 0x7f050012
+			public const int OpenInsertCardWindowButton = 2131034130;
 			
 			// aapt resource value: 0x7f050010
-			public const int OpenNearbyMerchantsButton = 2131034128;
+			public const int OpenManageCardButton = 2131034128;
 			
-			// aapt resource value: 0x7f05000c
-			public const int ValidThru = 2131034124;
+			// aapt resource value: 0x7f050011
+			public const int OpenNearbyMerchantsButton = 2131034129;
+			
+			// aapt resource value: 0x7f05000d
+			public const int ValidThru = 2131034125;
 			
 			static Id()
 			{

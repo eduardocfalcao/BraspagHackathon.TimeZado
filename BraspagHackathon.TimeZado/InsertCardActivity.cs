@@ -42,7 +42,7 @@ namespace BraspagHackathon.TimeZado
             var creditCard = new RequestCreditCard()
             {
                 Holder = FindViewById<EditText>(Resource.Id.Holder).Text,
-                CardNumer = FindViewById<EditText>(Resource.Id.CardNumber).Text,
+                Number = FindViewById<EditText>(Resource.Id.CardNumber).Text,
                 Cvv = FindViewById<EditText>(Resource.Id.Cvv).Text,
                 ValidThru = FindViewById<EditText>(Resource.Id.ValidThru).Text,
                 CostumerId = customerId
