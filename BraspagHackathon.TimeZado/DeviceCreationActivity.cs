@@ -31,14 +31,14 @@ namespace BraspagHackathon.TimeZado
 
             SetContentView(Resource.Layout.DeviceCreation);
 
+            this.offerDescriptionText = FindViewById<TextView>(Resource.Id.OfferDescriptionText);
+            this.offerQuantityText = FindViewById<TextView>(Resource.Id.OfferQuantityText);
+            this.offerPriceText = FindViewById<TextView>(Resource.Id.OfferPriceText);
+            this.offerMerchantNameText = FindViewById<TextView>(Resource.Id.OfferMerchantNameText);
+
             var dataProvider = InMemoryDataProvider.GetDataProvider();
 
-            var configuration = dataProvider.Read<GlobalConfiguration>().FirstOrDefault(x => x.Key == GlobalConfigurationKeys.CostumerId);
-
-            if (configuration == null)
-            {
-                return;
-            }
+            var configuration = dataProvider.Read<GlobalConfiguration>().First(x => x.Key == GlobalConfigurationKeys.CostumerId);
 
             this.customerId = int.Parse(configuration.Value);
             this.offerId = int.Parse(Intent.GetStringExtra("OfferId"));
