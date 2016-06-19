@@ -66,7 +66,9 @@ namespace BraspagHackathon.TimeZado
         {
             var nearbyMerchants = this.merchantAddressBookService.GetNearbyMerchants(address);
 
-            var adapter = new ArrayAdapter<Merchant>(this, Resource.Layout.MerchantsListTemplate, nearbyMerchants);
+            var nearbyMerchantsFormatted = nearbyMerchants.Select(m => string.Format("{0}\n{1}\n{2}", m.Name, m.Description, m.SiteUrl)).ToArray();
+
+            var adapter = new ArrayAdapter<string>(this, Resource.Layout.MerchantsListTemplate, nearbyMerchantsFormatted);
 
             this.nearbyMerchantsList.Adapter = adapter;
         }
