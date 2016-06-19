@@ -103,6 +103,9 @@ namespace BraspagHackathon.TimeZado
 			// aapt resource value: 0x7f050011
 			public const int NearbyMerchantsList = 2131034129;
 			
+			// aapt resource value: 0x7f050012
+			public const int OfferInfo = 2131034130;
+			
 			// aapt resource value: 0x7f05000d
 			public const int OffersList = 2131034125;
 			
@@ -154,6 +157,9 @@ namespace BraspagHackathon.TimeZado
 			
 			// aapt resource value: 0x7f030007
 			public const int NearbyMerchants = 2130903047;
+			
+			// aapt resource value: 0x7f030008
+			public const int OfferListTemplate = 2130903048;
 			
 			static Layout()
 			{
