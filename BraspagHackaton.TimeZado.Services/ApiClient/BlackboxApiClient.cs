@@ -74,9 +74,30 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
             return JsonConvert.DeserializeObject<T>(resultContentString);
         }
 
-        public void Put<T> (string resourceUri, object putBody)
+        public async Task<T> Put<T> (string resourceUri, object putBody)
         {
-            throw new NotImplementedException();
+            var uri = ApiUrl + resourceUri;
+            var jsonObj = JsonConvert.SerializeObject(putBody);
+
+            var httpContent = new StringContent(jsonObj,
+                                                Encoding.UTF8,
+                                                "application/json");
+
+            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            var httpClient = new HttpClient();
+            var response = await httpClient.PutAsync(uri, httpContent);
+
+            if (response.IsSuccessStatusCode == false)
+            {
+                var message = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(message);
+            }
+
+            response.EnsureSuccessStatusCode();
+            var resultContentString = await response.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<T>(resultContentString);
         }
 
         public async Task<T> Get<T>(string resourceUri)

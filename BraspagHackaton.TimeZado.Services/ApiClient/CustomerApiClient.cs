@@ -1,14 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using System.Threading.Tasks;
 using BraspagHackaton.TimeZado.Services.ApiClient.Requests;
 using BraspagHackaton.TimeZado.Services.ApiClient.Response;
@@ -26,7 +15,7 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
 
         public BlackboxApiClient BlackboxApiClient { get { return _blackboxApiClient; } }
 
-        public async Task<CustomerCreateApiResponse> Create(Customer customer)
+        public async Task<CustomerCreateApiResponse> Create(CreateCustomerRequest customer)
         {
             return await BlackboxApiClient.Post<CustomerCreateApiResponse>("customer", customer);
         }

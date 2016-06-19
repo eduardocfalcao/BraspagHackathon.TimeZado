@@ -59,10 +59,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Device.cs" />
     <Compile Include="Entities\MerchantGpsData.cs" />
     <Compile Include="Entities\Offer.cs" />
     <Compile Include="InMemoryDataProvider.cs" />
-    <Compile Include="DataProvider.cs" />
+    <Compile Include="DatabaseDataProvider.cs" />
     <Compile Include="Entities\GlobalConfiguration.cs" />
     <Compile Include="Entities\CreditCard.cs" />
     <Compile Include="Entities\Merchant.cs" />

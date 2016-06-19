@@ -35,7 +35,7 @@ namespace BraspagHackathon.TimeZado
         {
             var api = new CustomerApiClient(new BlackboxApiClient());
 
-            var customerApiRequest = new Customer()
+            var customerApiRequest = new CreateCustomerRequest()
             {
                 AddressId = 200,
                 CreditCardId = 100,

@@ -16,18 +16,18 @@ using Android.Database.Sqlite;
 
 namespace BraspagHackaton.TimeZado.Model
 {
-    public class DataProvider
+    public class DatabaseDataProvider
     {
-        public DataProvider(string dbName)
+        public DatabaseDataProvider(string dbName)
         {
             this.dbPath = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.ToString(), dbName);
         }
 
         public const string DBName = "timezado.db";
 
-        public static DataProvider GetDataProvider()
+        public static DatabaseDataProvider GetDataProvider()
         {
-            return new DataProvider(DBName);
+            return new DatabaseDataProvider(DBName);
         }
 
         private readonly string dbPath;

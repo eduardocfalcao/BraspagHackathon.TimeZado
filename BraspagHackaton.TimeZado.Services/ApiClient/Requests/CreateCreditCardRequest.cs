@@ -12,18 +12,16 @@ using Android.Widget;
 
 namespace BraspagHackaton.TimeZado.Services.ApiClient.Requests
 {
-    public class Customer
+    public class CreateCreditCardRequest
     {
+        public string Holder { get; set; }
 
-        public string FirstName { get; set; }
+        public string CardNumer { get; set; }
 
-        public string LastName { get; set; }
+        public string ValidThru { get; set; }
 
-        public string Email { get; set; }
+        public string Cvv { get; set; }
 
-        public int CreditCardId { get; set; }
-
-        public int AddressId { get; set; }
-
+        public int CostumerId { get; set; }
     }
 }
