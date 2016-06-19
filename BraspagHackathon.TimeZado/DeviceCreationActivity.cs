@@ -44,9 +44,9 @@ namespace BraspagHackathon.TimeZado
             this.offerId = int.Parse(Intent.GetStringExtra("OfferId"));
 
             this.offerDescriptionText.Text = Intent.GetStringExtra("OfferDescription");
-            this.offerPriceText.Text = Intent.GetStringExtra("OfferPrice");
-            this.offerQuantityText.Text = Intent.GetStringExtra("OfferQuantity");
-            this.offerMerchantNameText.Text = Intent.GetStringExtra("MerchantName");
+            this.offerPriceText.Text = string.Format("Preço: {0}", Intent.GetStringExtra("OfferPrice"));
+            this.offerQuantityText.Text = string.Format("Quantidade: {0}", Intent.GetStringExtra("OfferQuantity"));
+            this.offerMerchantNameText.Text = string.Format("Oferta de {0}", Intent.GetStringExtra("MerchantName"));
         }
     }
 }
