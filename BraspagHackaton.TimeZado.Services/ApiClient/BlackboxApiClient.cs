@@ -28,6 +28,21 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
 
         public string ApiUrl { get { return _apiUrl; } }
 
+        public async Task Post(string resourceUri, object postBody)
+        {
+            var uri = ApiUrl + resourceUri;
+            var httpContent = new StringContent(JsonConvert.SerializeObject(postBody),
+                                                Encoding.UTF8,
+                                                "application/json");
+
+            httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            var httpClient = new HttpClient();
+            var response = await httpClient.PostAsync(uri, httpContent);
+
+            response.EnsureSuccessStatusCode();            
+        }
+
 
         public async Task<T> Post<T>(string resourceUri, object postBody)
         {

@@ -98,6 +98,10 @@
       <Project>{1D4947E5-58AA-4336-B3FF-E31CE09D44BD}</Project>
       <Name>BraspagHackathon.TimeZado.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BraspagHackaton.TimeZado.Services\BraspagHackathon.TimeZado.Services.csproj">
+      <Project>{5CB9B057-A61B-4F2B-B6F2-BCA8C8B1F47F}</Project>
+      <Name>BraspagHackathon.TimeZado.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

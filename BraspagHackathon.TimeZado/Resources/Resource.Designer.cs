@@ -28,6 +28,8 @@ namespace BraspagHackathon.TimeZado
 		{
 			global::BraspagHackathon.TimeZado.Model.Resource.String.ApplicationName = global::BraspagHackathon.TimeZado.Resource.String.ApplicationName;
 			global::BraspagHackathon.TimeZado.Model.Resource.String.Hello = global::BraspagHackathon.TimeZado.Resource.String.Hello;
+			global::BraspagHackaton.TimeZado.Services.Resource.String.ApplicationName = global::BraspagHackathon.TimeZado.Resource.String.ApplicationName;
+			global::BraspagHackaton.TimeZado.Services.Resource.String.Hello = global::BraspagHackathon.TimeZado.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
