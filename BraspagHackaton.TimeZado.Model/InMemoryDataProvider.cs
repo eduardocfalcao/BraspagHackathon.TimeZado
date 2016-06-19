@@ -41,7 +41,7 @@ namespace BraspagHackaton.TimeZado.Model
         public List<T> Read<T>() where T : new()
         {
     
-            if (tables.ContainsKey(typeof(T)) == false )
+            if (tables.ContainsKey(typeof(T)) == false)
                 return Enumerable.Empty<T>().ToList();
 
             return tables[typeof(T)].Cast<T>().ToList();

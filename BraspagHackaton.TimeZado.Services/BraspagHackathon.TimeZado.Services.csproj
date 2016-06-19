@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="ApiClient\BlackboxApiClient.cs" />
     <Compile Include="ApiClient\CreditCardApiClient.cs" />
+    <Compile Include="ApiClient\DeviceApiClient.cs" />
     <Compile Include="ApiClient\MerchantApiClient.cs" />
     <Compile Include="ApiClient\CustomerApiClient.cs" />
     <Compile Include="ApiClient\OfferApiClient.cs" />
@@ -57,7 +58,12 @@
     <Compile Include="ApiClient\Requests\Customer.cs" />
     <Compile Include="ApiClient\Requests\CustomerUpdateDefaultCard.cs" />
     <Compile Include="ApiClient\Response\CreditCardResponse.cs" />
+    <Compile Include="ApiClient\Requests\CreateDeviceRequest.cs" />
+    <Compile Include="ApiClient\Requests\CreateCreditCardRequest.cs" />
+    <Compile Include="ApiClient\Requests\CreateCustomerRequest.cs" />
+    <Compile Include="ApiClient\Requests\UpdateDeviceRequest.cs" />
     <Compile Include="ApiClient\Response\CustomerCreateApiResponse.cs" />
+    <Compile Include="DeviceService.cs" />
     <Compile Include="MerchantAddressDictionary.cs" />
     <Compile Include="MerchantLocatorService.cs" />
     <Compile Include="MerchantOffersService.cs" />

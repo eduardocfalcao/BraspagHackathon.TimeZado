@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using BraspagHackaton.TimeZado.Services.ApiClient;
-using RequestCreditCard = BraspagHackaton.TimeZado.Services.ApiClient.Requests.CreditCard;
+using RequestCreditCard = BraspagHackaton.TimeZado.Services.ApiClient.Requests.CreateCreditCardRequest;
 using BraspagHackaton.TimeZado.Model;
 using BraspagHackathon.TimeZado.Model.Entities;
 

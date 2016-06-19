@@ -80,10 +80,11 @@ namespace BraspagHackathon.TimeZado
 
         private void NearbyMerchantsList_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            var selectedMerchantId = this.merchantAdapter.GetMerchantId(e.Position);
+            var selectedMerchant = this.merchantAdapter.GetMerchantGpsData(e.Position).Merchant;
             
             var intent = new Intent(this, typeof(MerchantOffersActivity));
-            intent.PutExtra("MerchantId", selectedMerchantId.ToString());
+            intent.PutExtra("MerchantId", selectedMerchant.MerchantId.ToString());
+            intent.PutExtra("MerchantName", selectedMerchant.Name);
             StartActivity(intent);
         }
 
