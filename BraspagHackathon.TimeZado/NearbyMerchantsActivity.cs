@@ -29,6 +29,7 @@ namespace BraspagHackathon.TimeZado
         private ListView nearbyMerchantsList;
         private MerchantListAdapter merchantAdapter;
         private List<Merchant> nearbyMerchants;
+        private Address currentAddress;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -44,6 +45,7 @@ namespace BraspagHackathon.TimeZado
 
             InitializeLocationManager();
             DisplayCurrentLocation();
+            FindNearbyMerchants();
         }
 
         private void DisplayCurrentLocation()
@@ -57,21 +59,19 @@ namespace BraspagHackathon.TimeZado
             {
                 this.locationText.Text = string.Format("{0:f6}, {1:f6}", this.currentLocation.Latitude, this.currentLocation.Longitude);
 
-                var address = ReverseGeocodeCurrentLocation();
+                this.currentAddress = ReverseGeocodeCurrentLocation();
 
-                this.addressText.Text = FormatAddress(address);
-
-                FindNearbyMerchants(address);
+                this.addressText.Text = FormatAddress(this.currentAddress);
             }
         }
 
-        private void FindNearbyMerchants(Address address)
+        private void FindNearbyMerchants()
         {
             
             if (this.nearbyMerchants != null && this.nearbyMerchants.Any())
                 return;
 
-            this.nearbyMerchants = this.merchantAddressBookService.GetNearbyMerchants(address);
+            var nearbyMerchants = this.merchantAddressBookService.GetNearbyMerchants(this.currentAddress);
 
             var nearbyMerchantsFormatted = nearbyMerchants.Select(m => m.Name).ToArray();
 

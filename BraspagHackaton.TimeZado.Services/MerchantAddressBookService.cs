@@ -42,7 +42,7 @@ namespace BraspagHackathon.TimeZado.Services
 
         private async Task<List<Merchant>> LoadMerchantsFromApi()
         {
-            var api = new MerchantApiClient(new BlackboxApiClient(@"https://braspaglabs.azure-api.net/blackbox/api/v1/"));
+            var api = new MerchantApiClient(new BlackboxApiClient());
 
             return await api.GetAll();
         }

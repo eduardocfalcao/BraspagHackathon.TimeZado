@@ -20,7 +20,8 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
     {
         public BlackboxApiClient()
             :this("https://braspaglabs.azure-api.net/blackbox/api/v1/")
-        { }
+        {
+        }
 
         public BlackboxApiClient(string apiUrl)
         {
