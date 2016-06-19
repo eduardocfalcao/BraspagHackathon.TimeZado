@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using BraspagHackaton.TimeZado.Model;
 using BraspagHackathon.TimeZado.Model.Entities;
+using BraspagHackathon.TimeZado.Services;
 
 namespace BraspagHackathon.TimeZado
 {
@@ -21,6 +22,9 @@ namespace BraspagHackathon.TimeZado
         private TextView offerQuantityText;
         private TextView offerPriceText;
         private TextView offerMerchantNameText;
+
+        private Button createDeviceButton;
+        private Button createDeviceAndShopButton;
 
         public int offerId;
         public int customerId;
@@ -36,6 +40,12 @@ namespace BraspagHackathon.TimeZado
             this.offerPriceText = FindViewById<TextView>(Resource.Id.OfferPriceText);
             this.offerMerchantNameText = FindViewById<TextView>(Resource.Id.OfferMerchantNameText);
 
+            this.createDeviceButton = FindViewById<Button>(Resource.Id.CreateDeviceButton);
+            this.createDeviceAndShopButton = FindViewById<Button>(Resource.Id.CreateButtonAndShop);
+
+            createDeviceButton.Click += CreateDeviceButton_Click;
+            createDeviceAndShopButton.Click += CreateDeviceAndShopButton_Click;
+
             var dataProvider = InMemoryDataProvider.GetDataProvider();
 
             var configuration = dataProvider.Read<GlobalConfiguration>().First(x => x.Key == GlobalConfigurationKeys.CostumerId);
@@ -47,6 +57,18 @@ namespace BraspagHackathon.TimeZado
             this.offerPriceText.Text = string.Format("Preço: {0}", Intent.GetStringExtra("OfferPrice"));
             this.offerQuantityText.Text = string.Format("Quantidade: {0}", Intent.GetStringExtra("OfferQuantity"));
             this.offerMerchantNameText.Text = string.Format("Oferta de {0}", Intent.GetStringExtra("MerchantName"));
+        }
+
+        private void CreateDeviceAndShopButton_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CreateDeviceButton_Click(object sender, EventArgs e)
+        {
+            var service = new DeviceService();
+
+
         }
     }
 }
