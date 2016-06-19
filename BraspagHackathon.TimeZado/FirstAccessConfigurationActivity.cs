@@ -37,9 +37,9 @@ namespace BraspagHackathon.TimeZado
 
             var customerApiRequest = new Customer()
             {
-                AddressId = 100,
-                CreditCardId = 200,
-                FisrtName = FindViewById<EditText>(Resource.Id.FirstName).Text,
+                AddressId = 200,
+                CreditCardId = 100,
+                FirstName = FindViewById<EditText>(Resource.Id.FirstName).Text,
                 LastName = FindViewById<EditText>(Resource.Id.LastName).Text,
                 Email = FindViewById<EditText>(Resource.Id.Email).Text
             };
@@ -55,6 +55,9 @@ namespace BraspagHackathon.TimeZado
             };
 
             dataProvider.Insert(configuration);
+
+            base.OnBackPressed();
+
         }
     }
 }

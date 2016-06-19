@@ -65,7 +65,7 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
             if (response.IsSuccessStatusCode == false)
             {
                 var message = await response.Content.ReadAsStringAsync();
-                Toast.MakeText(null, "Erro na chamada api. " + message, ToastLength.Long);
+                Console.WriteLine(message);
             }
 
             response.EnsureSuccessStatusCode();
