@@ -55,10 +55,6 @@ namespace BraspagHackathon.TimeZado
 
         private void NearbyMerchantsButton_Click(object sender, EventArgs e)
         {
-            //var intent = new Intent(this, typeof(MerchantOffersActivity));
-            //intent.PutExtra("MerchantId", new MerchantAddressDictionary().ElementAt(3).Key.ToString());
-            //StartActivity(intent);
-
             var intent = new Intent(this, typeof(NearbyMerchantsActivity));
             StartActivity(intent);
         }

@@ -73,8 +73,18 @@ namespace BraspagHackathon.TimeZado
             {
                 this.merchantAdapter = new MerchantListAdapter(this, merchants);
                 this.nearbyMerchantsList.Adapter = this.merchantAdapter;
+                this.nearbyMerchantsList.ItemClick += NearbyMerchantsList_ItemClick;
             },
             this.currentAddress);
+        }
+
+        private void NearbyMerchantsList_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            var selectedMerchantId = this.merchantAdapter.GetMerchantId(e.Position);
+            
+            var intent = new Intent(this, typeof(MerchantOffersActivity));
+            intent.PutExtra("MerchantId", selectedMerchantId.ToString());
+            StartActivity(intent);
         }
 
         private void InitializeLocationManager()
