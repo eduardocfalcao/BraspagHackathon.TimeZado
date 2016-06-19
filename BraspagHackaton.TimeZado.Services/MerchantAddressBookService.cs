@@ -33,11 +33,11 @@ namespace BraspagHackathon.TimeZado.Services
 
         private async void Initialize()
         {
-            // Inicializa o cache de lojas - isto poderia ser diferente se pudéssemos buscar na API lojas por endereço físico
-            this.merchants = await LoadMerchantsFromApi();
-
             // Inicializa o catálogo de endereços - neste exemplo preencherá com dados padrão em memória
             this.addresses.Add(TimeZadoMerchantCredentials.MerchantIdGuid, TimeZadoMerchantCredentials.MerchantAddress);
+
+            // Inicializa o cache de lojas - isto poderia ser diferente se pudéssemos buscar na API lojas por endereço físico
+            this.merchants = await LoadMerchantsFromApi();
         }
 
         private async Task<List<Merchant>> LoadMerchantsFromApi()

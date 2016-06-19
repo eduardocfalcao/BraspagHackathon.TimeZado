@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/MerchantInfo"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/border"
+    android:layout_margin="5dp"
+    android:padding="10dp"
+  >
+  <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/MerchantInfo_Name"
+      android:layout_width="match_parent"
+      android:layout_height="40dp" />
+
+  <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/MerchantInfo_Address"
     android:layout_width="match_parent"
     android:layout_height="40dp" />
+
+  <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/MerchantInfo_Description"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+  <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/MerchantInfo_Site"
+    android:layout_width="match_parent"
+    android:layout_height="40dp" />
+
+</LinearLayout>

@@ -13,6 +13,7 @@ using Android.Locations;
 using System.Threading.Tasks;
 using BraspagHackathon.TimeZado.Services;
 using BraspagHackathon.TimeZado.Model.Entities;
+using BraspagHackathon.TimeZado.Adpaters;
 
 namespace BraspagHackathon.TimeZado
 {
@@ -26,6 +27,8 @@ namespace BraspagHackathon.TimeZado
         private string locationProvider;
         private MerchantAddressBookService merchantAddressBookService;
         private ListView nearbyMerchantsList;
+        private MerchantListAdapter merchantAdapter;
+        private List<Merchant> nearbyMerchants;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -64,13 +67,17 @@ namespace BraspagHackathon.TimeZado
 
         private void FindNearbyMerchants(Address address)
         {
-            var nearbyMerchants = this.merchantAddressBookService.GetNearbyMerchants(address);
+            
+            if (this.nearbyMerchants != null && this.nearbyMerchants.Any())
+                return;
 
-            var nearbyMerchantsFormatted = nearbyMerchants.Select(m => string.Format("{0}\n{1}\n{2}", m.Name, m.Description, m.SiteUrl)).ToArray();
+            this.nearbyMerchants = this.merchantAddressBookService.GetNearbyMerchants(address);
 
-            var adapter = new ArrayAdapter<string>(this, Resource.Layout.MerchantsListTemplate, nearbyMerchantsFormatted);
+            var nearbyMerchantsFormatted = nearbyMerchants.Select(m => m.Name).ToArray();
 
-            this.nearbyMerchantsList.Adapter = adapter;
+            this.merchantAdapter = new MerchantListAdapter(this, nearbyMerchants);
+
+            this.nearbyMerchantsList.Adapter = this.merchantAdapter;
         }
 
         private void InitializeLocationManager()
@@ -139,7 +146,7 @@ namespace BraspagHackathon.TimeZado
         public void OnLocationChanged(Location location)
         {
             this.currentLocation = location;
-
+          
             DisplayCurrentLocation();
         }
 

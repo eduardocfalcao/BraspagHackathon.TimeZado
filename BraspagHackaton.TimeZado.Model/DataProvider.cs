@@ -38,7 +38,7 @@ namespace BraspagHackaton.TimeZado.Model
             database.Close();
 
             var db = new SQLiteConnection(dbPath);
-
+            
             if(db.Execute("SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = 'CreditCard'") == 0)
                 db.CreateTable<CreditCard>();
 
