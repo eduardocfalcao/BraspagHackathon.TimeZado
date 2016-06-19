@@ -50,7 +50,9 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
         public async Task<T> Post<T>(string resourceUri, object postBody)
         {
             var uri = ApiUrl + resourceUri;
-            var httpContent = new StringContent(JsonConvert.SerializeObject(postBody), 
+            var jsonObj = JsonConvert.SerializeObject(postBody);
+
+            var httpContent = new StringContent(jsonObj, 
                                                 Encoding.UTF8, 
                                                 "application/json");
 
@@ -58,8 +60,12 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
             
             var httpClient = new HttpClient();
             var response = await httpClient.PostAsync(uri, httpContent);
-
-
+             
+            if (response.IsSuccessStatusCode == false)
+            {
+                var message = await response.Content.ReadAsStringAsync();
+                Toast.MakeText(null, "Erro na chamada api. " + message, ToastLength.Long);
+            }
 
             response.EnsureSuccessStatusCode();
             var resultContentString = await response.Content.ReadAsStringAsync();
