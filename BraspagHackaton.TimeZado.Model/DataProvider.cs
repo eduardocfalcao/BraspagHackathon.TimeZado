@@ -12,6 +12,7 @@ using Android.Widget;
 using System.IO;
 using SQLite;
 using BraspagHackathon.TimeZado.Model.Entities;
+using Android.Database.Sqlite;
 
 namespace BraspagHackaton.TimeZado.Model
 {
@@ -33,6 +34,9 @@ namespace BraspagHackaton.TimeZado.Model
 
         public void InitDatabase()
         {
+            var database =  SQLiteDatabase.OpenDatabase(dbPath, null, DatabaseOpenFlags.CreateIfNecessary);
+            database.Close();
+
             var db = new SQLiteConnection(dbPath);
 
             if(db.Execute("SELECT count(*) FROM sqlite_master WHERE type = 'table' AND name = 'CreditCard'") == 0)
@@ -47,7 +51,7 @@ namespace BraspagHackaton.TimeZado.Model
 
         public void DropAllTables()
         {
-            var db = new SQLiteConnection(dbPath);
+            var db = new SQLiteConnection(dbPath, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create);
             db.DropTable<CreditCard>();
             db.DropTable<Merchant>();
             db.DropTable<GlobalConfiguration>();

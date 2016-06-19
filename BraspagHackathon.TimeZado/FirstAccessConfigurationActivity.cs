@@ -46,7 +46,7 @@ namespace BraspagHackathon.TimeZado
 
             var customerResponse = await api.Create(customerApiRequest);
 
-            var dataProvider = DataProvider.GetDataProvider();
+            var dataProvider = InMemoryDataProvider.GetDataProvider();
 
             var configuration = new GlobalConfiguration()
             {
