@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using BraspagHackaton.TimeZado.Services;
 using BraspagHackathon.TimeZado.Model.Entities;
+using BraspagHackathon.TimeZado.Adpaters;
 
 namespace BraspagHackathon.TimeZado
 {
@@ -39,9 +40,7 @@ namespace BraspagHackathon.TimeZado
 
             service.LoadOffers(offers =>
             {
-                var offersFormatted = offers.Select(o => string.Format("{0} - {1}", o.Label, o.Description)).ToArray();
-
-                var adapter = new ArrayAdapter<string>(this, Resource.Layout.OfferListTemplate, offersFormatted);
+                var adapter = new OfferListAdapter(this, offers);
 
                 this.offersList.Adapter = adapter;
             });

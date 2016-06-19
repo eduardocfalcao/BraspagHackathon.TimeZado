@@ -52,7 +52,10 @@ namespace BraspagHackathon.TimeZado
 			public const int border = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int Icon = 2130837505;
+			public const int edittext_bottom_line = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int Icon = 2130837506;
 			
 			static Drawable()
 			{
@@ -115,8 +118,17 @@ namespace BraspagHackathon.TimeZado
 			// aapt resource value: 0x7f050014
 			public const int NearbyMerchantsList = 2131034132;
 			
+			// aapt resource value: 0x7f050017
+			public const int OfferInfo_Description = 2131034135;
+			
 			// aapt resource value: 0x7f050015
-			public const int OfferInfo = 2131034133;
+			public const int OfferInfo_Image = 2131034133;
+			
+			// aapt resource value: 0x7f050016
+			public const int OfferInfo_Name = 2131034134;
+			
+			// aapt resource value: 0x7f050018
+			public const int OfferInfo_Price = 2131034136;
 			
 			// aapt resource value: 0x7f05000d
 			public const int OffersList = 2131034125;

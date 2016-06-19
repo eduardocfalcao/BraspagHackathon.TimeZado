@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adpaters\MerchantListAdapter.cs" />
+    <Compile Include="Adpaters\OfferListAdapter.cs" />
     <Compile Include="FirstAccessConfigurationActivity.cs" />
     <Compile Include="InsertCardActivity.cs" />
     <Compile Include="MainActivity.cs" />
@@ -86,6 +87,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\border.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\edittext_bottom_line.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

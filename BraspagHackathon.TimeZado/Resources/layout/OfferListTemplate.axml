@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/OfferInfo"
-    android:layout_width="match_parent"
-    android:layout_height="40dp" />
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="@drawable/edittext_bottom_line">
+
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_margin="5dp"
+          >
+
+
+    <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/OfferInfo_Image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp" />
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/OfferInfo_Name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+
+
+  </LinearLayout>
+
+  <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/OfferInfo_Description"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+  <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/OfferInfo_Price"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+</LinearLayout>
