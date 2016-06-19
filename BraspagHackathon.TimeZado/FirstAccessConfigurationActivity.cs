@@ -9,6 +9,11 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using BraspagHackaton.TimeZado.Services.ApiClient;
+using BraspagHackaton.TimeZado.Services.ApiClient.Requests;
+using BraspagHackaton.TimeZado.Model;
+using BraspagHackathon.TimeZado.Model.Entities;
+using System.Threading.Tasks;
 
 namespace BraspagHackathon.TimeZado
 {
@@ -26,9 +31,30 @@ namespace BraspagHackathon.TimeZado
             createCustomerButton.Click += CreateCustomerButton_Click;
         }
 
-        private void CreateCustomerButton_Click(object sender, EventArgs e)
+        private async void CreateCustomerButton_Click(object sender, EventArgs e)
         {
-            //chamar a api para criar o customer. Salvar Local o customer id.
+            var api = new CustomerApiClient(new BlackboxApiClient("https://braspaglabs.azure-api.net/blackbox/api/v1/"));
+
+            var customerApiRequest = new Customer()
+            {
+                AddressId = 100,
+                CreditCardId = 200,
+                FisrtName = FindViewById<EditText>(Resource.Id.FirstName).Text,
+                LastName = FindViewById<EditText>(Resource.Id.LastName).Text,
+                Email = FindViewById<EditText>(Resource.Id.Email).Text
+            };
+
+            var customerResponse = await api.Create(customerApiRequest);
+
+            var dataProvider = DataProvider.GetDataProvider();
+
+            var configuration = new GlobalConfiguration()
+            {
+                Key = GlobalConfigurationKeys.CostumerId,
+                Value = customerResponse.Id.ToString()
+            };
+
+            dataProvider.Insert(configuration);
         }
     }
 }

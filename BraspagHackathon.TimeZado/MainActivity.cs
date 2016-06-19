@@ -14,13 +14,11 @@ namespace BraspagHackathon.TimeZado
     [Activity(Label = "Time Zado App", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            string dbName = "timezado.db";
-            var dataProvider = new DataProvider(dbName);
+            var dataProvider = DataProvider.GetDataProvider();
             dataProvider.InitDatabase();
 
             CheckIfIsFirstAccess(dataProvider);

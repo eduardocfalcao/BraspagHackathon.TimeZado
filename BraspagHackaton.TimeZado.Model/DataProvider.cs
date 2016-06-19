@@ -22,6 +22,13 @@ namespace BraspagHackaton.TimeZado.Model
             this.dbPath = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.ToString(), dbName);
         }
 
+        public const string DBName = "timezado.db";
+
+        public static DataProvider GetDataProvider()
+        {
+            return new DataProvider(DBName);
+        }
+
         private readonly string dbPath;
 
         public void InitDatabase()

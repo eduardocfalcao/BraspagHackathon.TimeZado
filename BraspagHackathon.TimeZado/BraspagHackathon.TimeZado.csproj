@@ -99,7 +99,7 @@
       <Name>BraspagHackathon.TimeZado.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\BraspagHackaton.TimeZado.Services\BraspagHackathon.TimeZado.Services.csproj">
-      <Project>{5cb9b057-a61b-4f2b-b6f2-bca8c8b1f47f}</Project>
+      <Project>{5CB9B057-A61B-4F2B-B6F2-BCA8C8B1F47F}</Project>
       <Name>BraspagHackathon.TimeZado.Services</Name>
     </ProjectReference>
   </ItemGroup>

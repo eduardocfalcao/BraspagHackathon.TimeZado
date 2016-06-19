@@ -51,8 +51,13 @@
     <Compile Include="ApiClient\BlackboxApiClient.cs" />
     <Compile Include="ApiClient\CreditCardApiClient.cs" />
     <Compile Include="ApiClient\MerchantApiClient.cs" />
+    <Compile Include="ApiClient\CustomerApiClient.cs" />
     <Compile Include="ApiClient\Requests\CreditCard.cs" />
+    <Compile Include="ApiClient\Requests\Customer.cs" />
     <Compile Include="ApiClient\Response\CreditCardCreateResponse.cs" />
+    <Compile Include="ApiClient\Response\CustomerCreateApiResponse.cs" />
+    <Compile Include="IMerchantAddressBookService.cs" />
+    <Compile Include="IMerchantService.cs" />
     <Compile Include="MerchantAddressBookService.cs" />
     <Compile Include="TimeZadoMerchantCredentials.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
