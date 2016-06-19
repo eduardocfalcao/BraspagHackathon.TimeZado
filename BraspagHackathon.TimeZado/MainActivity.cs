@@ -37,7 +37,7 @@ namespace BraspagHackathon.TimeZado
 
             if (DataHolder.Devices != null)
             {
-                deviceListAdapter = new DeviceListAdapter(this, devices);
+                deviceListAdapter = new DeviceListAdapter(this, DataHolder.Devices);
                 devicesList.Adapter = deviceListAdapter;
             }
 
@@ -64,6 +64,7 @@ namespace BraspagHackathon.TimeZado
             alertDialog.SetMessage(string.Format("Deseja efetivar a compra do produto {0} ?", deviceDisplayData.OfferName));
             alertDialog.SetButton("Confirmar", async (s, e) =>
             {
+                alertDialog.Hide();
                 var request = new CreateShopRequest()
                 {
                     DeviceId = deviceDisplayData.Device.Id
@@ -76,17 +77,12 @@ namespace BraspagHackathon.TimeZado
                     message = "Compra efetuada com sucesso.";
                 else
                     message = "Aconteceu um erro ao tentar efetivar a compra.";
-                
-                AlertDialog successDialog = builder.Create();
-                successDialog.SetTitle("Confirmação de compra");
-                successDialog.SetIcon(Android.Resource.Drawable.DialogFrame);
-                successDialog.SetMessage(message);
-                successDialog.SetButton("Ok", (s2, e2) =>
-                {
-                    successDialog.Dismiss();
-                });
 
-                 alertDialog.Dismiss();
+                var t = Toast.MakeText(this, message, ToastLength.Short);
+                t.Show();
+
+                alertDialog.Cancel();
+                alertDialog.Dismiss();
             });
 
             alertDialog.SetButton2("Cancelar", (s, e) =>

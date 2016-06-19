@@ -35,7 +35,7 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
 
         public async Task<CreateShopResponse> Post(CreateShopRequest request)
         {
-            return await BlackboxApiClient.Post<CreateShopResponse>("shop", request);
+            return await BlackboxApiClient.Post<CreateShopResponse>("blackbox/shop", request);
         }
     }
 }
