@@ -7,5 +7,7 @@ namespace BraspagHackathon.TimeZado.Model.Entities
         public Merchant Merchant { get; set; }
 
         public Address Address { get; set; }
+
+        public double DistanceInKilometers { get; set; }
     }
 }

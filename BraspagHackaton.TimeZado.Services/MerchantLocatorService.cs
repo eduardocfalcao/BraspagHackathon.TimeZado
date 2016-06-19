@@ -11,14 +11,14 @@ namespace BraspagHackathon.TimeZado.Services
 {
     public class MerchantLocatorService
     {
-        public async void GetNearbyMerchants(Action<List<MerchantGpsData>> callback, Address address, double maxDistanceInMiles = 2)
+        public async void GetNearbyMerchants(Action<List<MerchantGpsData>> callback, Address localAddress)
         {
             var addresses = new MerchantAddressDictionary();
             var merchants = await LoadMerchantsFromApi();
 
-            var nearbyKeys = addresses.Where(a => a.Value.DistanceInMilesFrom(address) <= maxDistanceInMiles).Select(a => a.Key);
+            var nearbyKeys = addresses.Where(a => a.Value.DistanceInKilometersFrom(localAddress) <= 3).Select(a => a.Key);
             var nearbyMerchants = merchants.Where(m => nearbyKeys.Contains(m.MerchantId));
-            var merchantsGpsData = nearbyMerchants.Select(m => new MerchantGpsData { Merchant = m, Address = addresses[m.MerchantId] });
+            var merchantsGpsData = nearbyMerchants.Select(m => new MerchantGpsData { Merchant = m, Address = addresses[m.MerchantId], DistanceInKilometers = addresses[m.MerchantId].DistanceInKilometersFrom(localAddress) });
 
             if (callback != null)
             {

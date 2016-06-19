@@ -12,5 +12,10 @@ namespace BraspagHackathon.TimeZado.Extensions
         {
             return (3959 * Math.Acos(Math.Cos(localAddress.Latitude.ToRadians()) * Math.Cos(remoteAddress.Latitude.ToRadians()) * Math.Cos(remoteAddress.Longitude.ToRadians() - localAddress.Longitude.ToRadians()) + Math.Sin(localAddress.Latitude.ToRadians()) * Math.Sin(remoteAddress.Latitude.ToRadians())));
         }
+
+        public static double DistanceInKilometersFrom(this Address remoteAddress, Address localAddress)
+        {
+            return DistanceInMilesFrom(remoteAddress, localAddress) * 1.60934;
+        }
     }
 }
