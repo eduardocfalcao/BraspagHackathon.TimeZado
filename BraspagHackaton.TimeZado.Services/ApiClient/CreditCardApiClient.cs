@@ -31,9 +31,14 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
 
         public BlackboxApiClient BlackboxApiClient { get { return _blackboxApiClient; } }
 
-        public async Task<CreditCardCreateResponse> Create(CreateCreditCardRequest creditCard)
+        public async Task<CreditCardResponse> Create(CreditCard creditCard)
         {
-            return await BlackboxApiClient.Post<CreditCardCreateResponse>("creditCard", creditCard);           
+            return await BlackboxApiClient.Post<CreditCardResponse>("creditCard", creditCard);           
+        }
+
+        public async Task<List<CreditCardResponse>> Get()
+        {
+            return await BlackboxApiClient.Get<List<CreditCardResponse>>("creditCard");
         }
     }
 }

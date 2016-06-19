@@ -68,7 +68,15 @@ namespace BraspagHackathon.TimeZado.Adpaters
             convertView.FindViewById<TextView>(Resource.Id.MerchantInfo_Site).Text = merchantGpsData.Merchant.SiteUrl;
             convertView.FindViewById<TextView>(Resource.Id.MerchantInfo_Address).Text = string.Concat(merchantGpsData.Address.FeatureName, " - ", merchantGpsData.Address.Thoroughfare);
 
+            convertView.FindViewById<TextView>(Resource.Id.MerchantInfo_Distance).Text = 
+                string.Concat("Distância aproximada (em mêtros): "+ ConvertKilometersToMeters(merchantGpsData.DistanceInKilometers));
+
             return convertView;
+        }
+
+        public string ConvertKilometersToMeters(double km)
+        {
+            return (km * 1000).ToString("N2");
         }
     }
 }

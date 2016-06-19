@@ -70,11 +70,11 @@ namespace BraspagHackathon.TimeZado
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050019
-			public const int Address = 2131034137;
+			// aapt resource value: 0x7f050015
+			public const int Address = 2131034133;
 			
 			// aapt resource value: 0x7f050000
-			public const int CardNumber = 2131034112;
+			public const int CardInfo_CardNumber = 2131034112;
 			
 			// aapt resource value: 0x7f050012
 			public const int CardsList = 2131034130;
@@ -84,6 +84,8 @@ namespace BraspagHackathon.TimeZado
 			
 			// aapt resource value: 0x7f05000a
 			public const int CreateCustomerButton = 2131034122;
+			// aapt resource value: 0x7f050008
+			public const int Cvv = 2131034120;
 			
 			// aapt resource value: 0x7f050005
 			public const int CreateDeviceButton = 2131034117;
@@ -114,6 +116,8 @@ namespace BraspagHackathon.TimeZado
 			
 			// aapt resource value: 0x7f050016
 			public const int MerchantInfo_Description = 2131034134;
+			// aapt resource value: 0x7f050011
+			public const int MerchantInfo_Distance = 2131034129;
 			
 			// aapt resource value: 0x7f050014
 			public const int MerchantInfo_Name = 2131034132;

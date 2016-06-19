@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adpaters\CreditCardListAdapter.cs" />
     <Compile Include="Adpaters\MerchantListAdapter.cs" />
     <Compile Include="Adpaters\OfferListAdapter.cs" />
     <Compile Include="DeviceCreationActivity.cs" />

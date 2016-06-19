@@ -1,5 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/CardNumber"
-    android:layout_width="match_parent"
-    android:layout_height="40dp" />
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="@drawable/edittext_bottom_line"
+        android:layout_margin="10dp">
+
+
+  <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/CardInfo_CardNumber"
+      android:layout_width="match_parent"
+      android:layout_height="30dp" />
+
+</LinearLayout>

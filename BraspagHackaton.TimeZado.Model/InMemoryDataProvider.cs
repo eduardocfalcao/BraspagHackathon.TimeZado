@@ -21,6 +21,14 @@ namespace BraspagHackaton.TimeZado.Model
         private InMemoryDataProvider()
         {
             tables = new Dictionary<Type, List<Object>>();
+
+            var gc = new GlobalConfiguration()
+            {
+                Key = GlobalConfigurationKeys.CostumerId,
+                Value = "28"
+            };
+
+            Insert(gc);
         }
 
         public static InMemoryDataProvider GetDataProvider()
