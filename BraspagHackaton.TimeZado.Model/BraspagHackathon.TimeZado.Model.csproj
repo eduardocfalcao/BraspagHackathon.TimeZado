@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InMemoryDataProvider.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Entities\GlobalConfiguration.cs" />
     <Compile Include="Entities\CreditCard.cs" />

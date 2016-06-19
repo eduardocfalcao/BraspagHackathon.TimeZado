@@ -18,8 +18,8 @@ namespace BraspagHackathon.TimeZado
         {
             base.OnCreate(bundle);
 
-            var dataProvider = DataProvider.GetDataProvider();
-            dataProvider.InitDatabase();
+            var dataProvider = InMemoryDataProvider.GetDataProvider();
+            
 
             CheckIfIsFirstAccess(dataProvider);
 
@@ -35,7 +35,7 @@ namespace BraspagHackathon.TimeZado
             nearbyMerchantsButton.Click += NearbyMerchantsButton_Click;
         }
 
-        private void CheckIfIsFirstAccess(DataProvider dataProvider)
+        private void CheckIfIsFirstAccess(InMemoryDataProvider dataProvider)
         {
             var firstAccess = dataProvider.Read<GlobalConfiguration>()
                                           .Any(x => x.Key == GlobalConfigurationKeys.CostumerId) == false;
