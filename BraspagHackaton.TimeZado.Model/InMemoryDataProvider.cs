@@ -32,22 +32,21 @@ namespace BraspagHackaton.TimeZado.Model
         
         public List<T> Read<T>() where T : new()
         {
-            var table = tables[typeof(T)];
-            if (table == null)
+    
+            if (tables.ContainsKey(typeof(T)) == false )
                 return Enumerable.Empty<T>().ToList();
 
-            return table.Cast<T>().ToList();
+            return tables[typeof(T)].Cast<T>().ToList();
         }
 
 
         public void Insert(object obj)
         {
-            var table = tables[obj.GetType()];
-            if(table == null)
+            if(tables.ContainsKey(obj.GetType()) == false)
             {
-                table = new List<object>();
-                tables[obj.GetType()] = table;
+                tables[obj.GetType()] = new List<object>(); ;
             }
+            var table = tables[obj.GetType()];
             table.Add(obj);
         }
 

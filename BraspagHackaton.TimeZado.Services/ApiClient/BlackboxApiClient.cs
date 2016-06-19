@@ -18,6 +18,9 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
 {
     public class BlackboxApiClient
     {
+        public BlackboxApiClient()
+            :this("https://braspaglabs.azure-api.net/blackbox/api/v1/")
+        { }
 
         public BlackboxApiClient(string apiUrl)
         {
@@ -55,6 +58,8 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
             
             var httpClient = new HttpClient();
             var response = await httpClient.PostAsync(uri, httpContent);
+
+
 
             response.EnsureSuccessStatusCode();
             var resultContentString = await response.Content.ReadAsStringAsync();
