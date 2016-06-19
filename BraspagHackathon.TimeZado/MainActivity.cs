@@ -18,10 +18,10 @@ namespace BraspagHackathon.TimeZado
         {
             base.OnCreate(bundle);
 
-            var dataProvider = DataProvider.GetDataProvider();
-            dataProvider.InitDatabase();
+            //var dataProvider = DataProvider.GetDataProvider();
+            //dataProvider.InitDatabase();
 
-            CheckIfIsFirstAccess(dataProvider);
+            //CheckIfIsFirstAccess(dataProvider);
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);

@@ -64,12 +64,20 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
 
         public void Put<T> (string resourceUri, object putBody)
         {
-
+            throw new NotImplementedException();
         }
 
-        public T Get<T>(string resourceUri)
+        public async Task<T> Get<T>(string resourceUri)
         {
-            return default(T);
+            var uri = ApiUrl + resourceUri;
+           
+            var httpClient = new HttpClient();
+            var response = await httpClient.GetAsync(uri);
+
+            response.EnsureSuccessStatusCode();
+            var resultContentString = await response.Content.ReadAsStringAsync();
+
+            return JsonConvert.DeserializeObject<T>(resultContentString);
         }
 
 

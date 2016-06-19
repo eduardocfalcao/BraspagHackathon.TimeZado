@@ -12,6 +12,7 @@ using Android.Widget;
 using Android.Locations;
 using System.Threading.Tasks;
 using BraspagHackathon.TimeZado.Services;
+using BraspagHackathon.TimeZado.Model.Entities;
 
 namespace BraspagHackathon.TimeZado
 {
@@ -24,6 +25,7 @@ namespace BraspagHackathon.TimeZado
         private TextView addressText;
         private string locationProvider;
         private MerchantAddressBookService merchantAddressBookService;
+        private ListView nearbyMerchantsList;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -33,6 +35,7 @@ namespace BraspagHackathon.TimeZado
 
             this.locationText = FindViewById<TextView>(Resource.Id.Location);
             this.addressText = FindViewById<TextView>(Resource.Id.Address);
+            this.nearbyMerchantsList = FindViewById<ListView>(Resource.Id.NearbyMerchantsList);
 
             this.merchantAddressBookService = new MerchantAddressBookService();
 
@@ -62,6 +65,10 @@ namespace BraspagHackathon.TimeZado
         private void FindNearbyMerchants(Address address)
         {
             var nearbyMerchants = this.merchantAddressBookService.GetNearbyMerchants(address);
+
+            var adapter = new ArrayAdapter<Merchant>(this, Resource.Layout.MerchantsListTemplate, nearbyMerchants);
+
+            this.nearbyMerchantsList.Adapter = adapter;
         }
 
         private void InitializeLocationManager()

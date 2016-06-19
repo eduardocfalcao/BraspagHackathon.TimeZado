@@ -28,10 +28,10 @@ namespace BraspagHackathon.TimeZado.Services
         {
             this.addresses = new Dictionary<Guid, Address>();
 
-            Task.Run(this.Initialize).Wait();
+            this.Initialize();
         }
 
-        private async Task Initialize()
+        private async void Initialize()
         {
             // Inicializa o cache de lojas - isto poderia ser diferente se pudéssemos buscar na API lojas por endereço físico
             this.merchants = await LoadMerchantsFromApi();
@@ -49,9 +49,14 @@ namespace BraspagHackathon.TimeZado.Services
 
         public List<Merchant> GetNearbyMerchants(Address localAddress, double maxDistanceInMiles = 2)
         {
-            var nearbyKeys = this.addresses.Where(a => a.Value.DistanceInMilesFrom(localAddress) <= maxDistanceInMiles).Select(a => a.Key);
+            if (this.merchants != null && this.merchants.Any())
+            {
+                var nearbyKeys = this.addresses.Where(a => a.Value.DistanceInMilesFrom(localAddress) <= maxDistanceInMiles).Select(a => a.Key);
 
-            return merchants.Where(m => nearbyKeys.Contains(m.MerchantId)).ToList();
+                return merchants.Where(m => nearbyKeys.Contains(m.MerchantId)).ToList();
+            }
+
+            return new List<Merchant>();
         }
 
         public Address Get(Merchant merchant)
