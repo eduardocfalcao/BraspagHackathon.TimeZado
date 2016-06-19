@@ -35,12 +35,17 @@ namespace BraspagHackathon.TimeZado
             var apiClient = new CreditCardApiClient();
             var dataProvider = InMemoryDataProvider.GetDataProvider();
 
+            var customerId = int.Parse(dataProvider.Read<GlobalConfiguration>()
+                                          .Single(x => x.Key == GlobalConfigurationKeys.CostumerId)
+                                          .Value);
+
             var creditCard = new RequestCreditCard()
             {
                 Holder = FindViewById<EditText>(Resource.Id.Holder).Text,
                 CardNumer = FindViewById<EditText>(Resource.Id.CardNumber).Text,
                 Cvv = FindViewById<EditText>(Resource.Id.Cvv).Text,
-                ValidThru = FindViewById<EditText>(Resource.Id.ValidThru).Text
+                ValidThru = FindViewById<EditText>(Resource.Id.ValidThru).Text,
+                CostumerId = customerId
             };
 
             var creditCardResponse = await apiClient.Create(creditCard);

@@ -9,6 +9,9 @@ using Android.OS;
 using BraspagHackaton.TimeZado.Model;
 using BraspagHackathon.TimeZado.Model.Entities;
 using BraspagHackathon.TimeZado.Services;
+using BraspagHackaton.TimeZado.Services.ApiClient;
+using System.Collections.Generic;
+using BraspagHackaton.TimeZado.Services.ApiClient.Response;
 
 namespace BraspagHackathon.TimeZado
 {
@@ -20,7 +23,8 @@ namespace BraspagHackathon.TimeZado
             base.OnCreate(bundle);
 
             var dataProvider = InMemoryDataProvider.GetDataProvider();
-            
+
+            ConfigureDefaultUser(dataProvider);
 
             //CheckIfIsFirstAccess(dataProvider);
 
@@ -34,8 +38,8 @@ namespace BraspagHackathon.TimeZado
 
             button.Click += OpenManageCardsActivity;
             nearbyMerchantsButton.Click += NearbyMerchantsButton_Click;
-        }
-
+        }     
+        
         private void CheckIfIsFirstAccess(InMemoryDataProvider dataProvider)
         {
             var firstAccess = dataProvider.Read<GlobalConfiguration>()

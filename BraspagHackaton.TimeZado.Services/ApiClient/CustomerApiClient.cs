@@ -17,6 +17,9 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
 {
     public class CustomerApiClient
     {
+        public CustomerApiClient() : this(new BlackboxApiClient())
+        { }
+
         public CustomerApiClient(BlackboxApiClient client)
         {
             _blackboxApiClient = client;
@@ -29,6 +32,11 @@ namespace BraspagHackaton.TimeZado.Services.ApiClient
         public async Task<CustomerCreateApiResponse> Create(Customer customer)
         {
             return await BlackboxApiClient.Post<CustomerCreateApiResponse>("customer", customer);
+        }
+
+        public async Task<CustomerCreateApiResponse> Update(CustomerUpdateDefaultCard updateCustomer)
+        {
+            return await BlackboxApiClient.Put<CustomerCreateApiResponse>("customer", updateCustomer);
         }
     }
 }

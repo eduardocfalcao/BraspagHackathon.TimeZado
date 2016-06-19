@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace BraspagHackaton.TimeZado.Services.ApiClient.Response
 {
-    public class CreditCardCreateResponse
+    public class CreditCardResponse
     {
         public int Id { get; set; }
 
