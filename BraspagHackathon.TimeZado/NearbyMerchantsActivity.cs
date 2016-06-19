@@ -33,20 +33,24 @@ namespace BraspagHackathon.TimeZado
             this.addressText = FindViewById<TextView>(Resource.Id.Address);
 
             InitializeLocationManager();
-            GetCurrentLocation();
+            DisplayCurrentLocation();
         }
 
-        private async void GetCurrentLocation()
+        private void DisplayCurrentLocation()
         {
             if (this.currentLocation == null)
             {
-                this.addressText.Text = "Can't determine the current address. Try again in a few minutes.";
-                return;
+                this.locationText.Text = "Procurando minha localização...";
+                this.addressText.Text = string.Empty;
             }
+            else
+            {
+                this.locationText.Text = string.Format("{0:f6}, {1:f6}", this.currentLocation.Latitude, this.currentLocation.Longitude);
 
-            Address address = await ReverseGeocodeCurrentLocation();
+                var address = ReverseGeocodeCurrentLocation();
 
-            DisplayAddress(address);
+                this.addressText.Text = FormatAddress(address);
+            }
         }
 
         private void InitializeLocationManager()
@@ -55,7 +59,8 @@ namespace BraspagHackathon.TimeZado
 
             var criteria = new Criteria
             {
-                Accuracy = Accuracy.Medium
+                Accuracy = Accuracy.Coarse,
+                PowerRequirement = Power.Medium
             };
 
             var providers = this.locationManager.GetProviders(criteria, true);
@@ -70,12 +75,37 @@ namespace BraspagHackathon.TimeZado
             }
         }
 
+        protected override void OnStart()
+        {
+            base.OnStart();
+
+            // Procura a localização na inicialização do aplicativo
+            RequestLocationUpdates();
+        }
+
+        private void RequestLocationUpdates()
+        {
+            if (locationProvider != string.Empty)
+            {
+                this.locationManager.RequestLocationUpdates(locationProvider, 0, 0, this);
+            }
+            else
+            {
+                this.locationText.Text = "Nenhum provedor de localização disponível. Certifique-se de que você está conectado à uma conexão de boa precisão, como Wi-fi.";
+            }
+        }
+
+        private void RemoveLocationUpdates()
+        {
+            this.locationManager.RemoveUpdates(this);
+        }
+
         protected override void OnResume()
         {
             base.OnResume();
 
             // Ao restaurar o aplicativo do segundo plano, reiniciamos o serviço de localização
-            this.locationManager.RequestLocationUpdates(locationProvider, 0, 0, this);
+            RequestLocationUpdates();
         }
 
         protected override void OnPause()
@@ -83,29 +113,17 @@ namespace BraspagHackathon.TimeZado
             base.OnPause();
 
             // Quando o aplicativo entrar em segundo plano, paramos o serviço de atualização para economizar bateria
-            this.locationManager.RemoveUpdates(this);
+            RemoveLocationUpdates();
         }
 
-        public async void OnLocationChanged(Location location)
+        public void OnLocationChanged(Location location)
         {
             this.currentLocation = location;
 
-            if (this.currentLocation == null)
-            {
-                this.locationText.Text = "Impossível determinar sua localização. Tente novamente depois de um tempo.";
-                this.addressText.Text = string.Empty;
-            }
-            else
-            {
-                this.locationText.Text = string.Format("{0:f6}, {1:f6}", location.Latitude, location.Longitude);
-
-                var address = await ReverseGeocodeCurrentLocation();
-
-                DisplayAddress(address);
-            }
+            DisplayCurrentLocation();
         }
 
-        private void DisplayAddress(Address address)
+        private static string FormatAddress(Address address)
         {
             if (address != null)
             {
@@ -116,15 +134,17 @@ namespace BraspagHackathon.TimeZado
                     deviceAddress.AppendLine(address.GetAddressLine(i));
                 }
 
-                this.addressText.Text = deviceAddress.ToString();
+                return deviceAddress.ToString();
             }
+
+            return null;
         }
 
-        private async Task<Address> ReverseGeocodeCurrentLocation()
+        private Address ReverseGeocodeCurrentLocation()
         {
             var geocoder = new Geocoder(this);
 
-            var addressList = await geocoder.GetFromLocationAsync(this.currentLocation.Latitude, this.currentLocation.Longitude, 1);
+            var addressList = geocoder.GetFromLocation(this.currentLocation.Latitude, this.currentLocation.Longitude, 10);
 
             return addressList.FirstOrDefault();
         }

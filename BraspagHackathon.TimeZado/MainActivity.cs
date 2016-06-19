@@ -11,7 +11,7 @@ using BraspagHackathon.TimeZado.Model.Entities;
 
 namespace BraspagHackathon.TimeZado
 {
-    [Activity(Label = "BraspagHackathon.TimeZado", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "Time Zado App", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
