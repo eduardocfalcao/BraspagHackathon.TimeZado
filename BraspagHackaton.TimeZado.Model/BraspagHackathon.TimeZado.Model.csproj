@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Device.cs" />
+    <Compile Include="Entities\DeviceDisplayData.cs" />
     <Compile Include="Entities\MerchantGpsData.cs" />
     <Compile Include="Entities\Offer.cs" />
     <Compile Include="InMemoryDataProvider.cs" />
