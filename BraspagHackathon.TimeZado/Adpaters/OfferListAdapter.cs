@@ -52,11 +52,14 @@ namespace BraspagHackathon.TimeZado.Adpaters
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().PermitAll().Build();
+            StrictMode.SetThreadPolicy(policy);
+
             var offer = GetOffer(position);
 
             if (convertView == null)
             {
-                convertView = LayoutInflater.From(context).Inflate(Resource.Layout.MerchantsListTemplate, null);
+                convertView = LayoutInflater.From(context).Inflate(Resource.Layout.OfferListTemplate, null);
             }
             URL url = new URL(offer.ImageUrl);
             Bitmap bmp = BitmapFactory.DecodeStream(url.OpenConnection().InputStream);

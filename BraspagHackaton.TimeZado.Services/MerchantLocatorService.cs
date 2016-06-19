@@ -18,7 +18,7 @@ namespace BraspagHackathon.TimeZado.Services
 
             var nearbyKeys = addresses.Where(a => a.Value.DistanceInMilesFrom(address) <= maxDistanceInMiles).Select(a => a.Key);
             var nearbyMerchants = merchants.Where(m => nearbyKeys.Contains(m.MerchantId));
-            var merchantsGpsData = merchants.Select(m => new MerchantGpsData { Merchant = m, Address = addresses[m.MerchantId] });
+            var merchantsGpsData = nearbyMerchants.Select(m => new MerchantGpsData { Merchant = m, Address = addresses[m.MerchantId] });
 
             if (callback != null)
             {
